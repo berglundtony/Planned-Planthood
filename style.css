@@ -164,10 +164,12 @@ h3 {
 a {
   text-decoration: none;
   color: var(--clr-accent);
+  text-transform: uppercase;
+  
 
   &:hover,
   &:focus-visible {
-    color: var(--clr-primary-light-1);
+    color: var(--clr-primary-dark);
     text-decoration: underline;
   }
 }
@@ -176,4 +178,95 @@ body {
   font-family: var(--font-base);
   background-color: var(--clr-accent-light-1);
   color: var(--clr-primary-dark);
+}
+
+.container{
+  margin: 0 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* Logotype */
+
+.logo-container{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#logo, .logo-text{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+   
+}
+
+#logo{
+  width: 30px;
+  height: 30px;
+}
+
+.logo-text {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-green-400);
+  text-transform: uppercase;
+}
+
+/* navigation */
+
+nav{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--clr-primary-light-1);
+}
+
+.nav-links{
+  display: flex;
+  gap: 4rem;
+  margin-left: 3rem;
+
+  li{
+    list-style: none;
+  }
+}
+
+
+/* hero */
+
+.hero{
+  width:80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: var(--clr-primary-light-1);
+  box-shadow: var(--border-shadow);
+}
+
+#maskros {
+  width:300px;
+  height:200px;
+}
+
+/* newsletter */
+
+.newsletter-notification{
+  width:50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  h3{ 
+    text-align: center;
+      margin-top: 2rem;
+  }
 }

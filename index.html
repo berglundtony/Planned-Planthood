@@ -9,9 +9,16 @@
   <body>
 
 <Header>
-  <span>Planned Planthood</span>
+ 
   <nav>
-    <ul>
+      <div class="logo-container">
+        <img src="Assets/images/logo.svg" id="logo">
+        <div class="logo-text">
+          <span>Planned </span>
+          <span>Planthood</span>
+        </div>
+      </div>
+    <ul class="nav-links">
       <li><a href="#home">Hem</a></li>
       <li><a href="#history">Historik</a></li>
       <li><a href="#tips">Tips</a></li>
@@ -21,12 +28,14 @@
 </Header>
   <main class="container">
     <section class="hero">
-      <h1>Uppskattade växter</h1>
+      <h3>Uppskattade växter</h3>
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, corporis ipsum.</p>
-      <div class="image-container"></div>
+      <div class="image-container">
+        <img src="https://fastly.picsum.photos/id/239/1739/1391.jpg?hmac=-Zh20gMdOuV7tHr4wGEUqACAxdvb7gkDlKKS9MIE1TU" id="maskros" alt="Maskros" />
+      </div>
     </section>
     <section class="newsletter-notification">
-        <h2>Anmäl dig till vårt nyhetsbrev så du inte missar en utsådd!</h2>
+        <h3>Anmäl dig till vårt nyhetsbrev så du inte missar en utsådd!</h3>
         <form action="submit">
           <input type="email" placeholder="Din e-postadress" />
           <button type="submit">Anmäl dig</button>
@@ -134,5 +143,34 @@
         </ul>
       </nav>
     </footer>
+    <script>
+        // Vänta tills bilden är laddad
+        window.onload = function() {
+          const logo = document.getElementById('logo');
+
+          // Ladda SVG:n och få tillgång till dess innehåll
+          fetch(logo.src)
+            .then(response => response.text())
+            .then(svgText => {
+              // Skapa en DOM från SVG:n
+              const parser = new DOMParser();
+              const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
+              
+              // Hämta alla path-element
+              const paths = svgDoc.querySelectorAll('path');
+              paths.forEach(path => {
+                path.setAttribute('stroke', 'hsl(169, 86%, 28%)'); // Ändra konturfärgen
+              });
+
+              // Manipulera SVG:n här, exempelvis sätta färg
+              const svgElement = svgDoc.documentElement;
+              svgElement.setAttribute('width', '30');  // Ändra bredden till 50px
+              svgElement.setAttribute('height', '30');
+              
+              // Ersätt img-elementet med den manipulerade SVG:n
+              logo.parentNode.replaceChild(svgElement, logo);
+            });
+        };
+    </script>
   </body>
 </html>
