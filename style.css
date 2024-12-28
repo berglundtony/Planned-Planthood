@@ -82,16 +82,29 @@ main {
   --clr-green-900: hsl(169, 80%, 12%);
 
   --clr-robust: hsl(221, 63%, 32%);
+  --clr-robust-hover: hsl(221, 63%, 32%, 0.8);
   --clr-green: hsl(110, 63%, 32%);
+  --clr-green-hover: hsl(110, 63%, 32%, 0.8);
   --clr-flower: hsl(2, 92%, 33%);
+  --clr-flower-hover: hsl(2, 92%, 33%, 0.8);
   --clr-colorful: hsl(303, 55%, 47%);
+  --clr-colorful-hover: hsl(303, 55%, 47%, 0.8);
   --clr-sunloving: hsl(27, 88%, 33%);
+  --clr-sunloving-hover: hsl(27, 88%, 33%, 0.8);
   --clr-air: hsl(180, 84%, 27%);
+  --clr-air-hover: hsl(180, 84%, 27%, 0.8);
   --clr-decorative: hsl(278, 79%, 40%);
+  --clr-decorative-hover: hsl(278, 79%, 40%, 0.8);
   --clr-edible: hsl(68, 61%, 30%);
+  --clr-edible-hover: hsl(68, 61%, 30%, 0.8);
   --clr-easy: hsl(224, 86%, 58%);
+  --clr-easy-hover: hsl(224, 86%, 58%, 0.8);
   --clr-fragrant: hsl(327, 51%, 47%);
+  --clr-fragrant-hover: hsl(327, 51%, 47%, 0.8);
   --clr-fast: hsl(218, 11%, 34%);
+  --clr-fast-hover: hsl(218, 11%, 34%, 0.8);
+  --clr-spices: hsl(120, 92%, 45%);
+  --clr-spices-hover:  hsl(120, 92%, 45%, 0.8);
 
   --border-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
@@ -127,6 +140,13 @@ main {
   --fw-semi-bold: var(--fw-600);
   --fw-bold: var(--fw-700);
   --fw-x-bold: var(--fw-900);
+
+    --max-container-height: 600px;
+    --min-container-height: 400px;
+    --max-container-width: 900px;
+    --min-image-height: 150px;
+    --min-image-width: 150px;
+    --max-image-height: 250px;
 }
 
 /* Utilities */
@@ -158,7 +178,6 @@ h2 {
 
 h3 {
   font-size: var(--fs-600);
-  font-weight: var(--fw-semi-bold);
 }
 
 a {
@@ -181,11 +200,10 @@ body {
 }
 
 .container{
-  margin: 0 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 /* Logotype */
@@ -222,51 +240,824 @@ nav{
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 2rem;
   background-color: var(--clr-primary-light-1);
 }
 
 .nav-links{
   display: flex;
-  gap: 4rem;
-  margin-left: 3rem;
+  gap: 3rem;
+  margin-left: 5rem;
 
   li{
     list-style: none;
   }
 }
 
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-icon span {
+  width: 30px;
+  height: 3px;
+  background-color: var(--clr-green-400);
+}
+
 
 /* hero */
 
 .hero{
-  width:80%;
+  width:100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   padding: 2rem;
-  background-color: var(--clr-primary-light-1);
+
+  h3{
+    font-size: var(--fs-600);
+    font-weight: var(--fw-bold);
+    text-align: center;
+  }
+
+  p{
+    font-size: var(--fs-400);
+    text-align: center;
+  }
+}
+
+.image-container{
+  display: grid;
+    /* Tre kolumner */
+  grid-template-columns: repeat(5, 1fr);
+    /* Två rader */
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+  min-height: var(--min-container-height );
+  max-height: var(--max-container-height);
+  max-width: var(--max-container-width);
+  border: 10px solid var(--clr-neutral-100);
   box-shadow: var(--border-shadow);
 }
 
-#maskros {
-  width:300px;
-  height:200px;
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
+
+.crop-container-dandelion {
+  grid-row: 1 / span 2; 
+  grid-column: 1;
+  min-width: 280px;
+  width: 100%;
+  height: 100%;
+}
+
+.crop-container-rasberry {
+  grid-row: 1;
+  grid-column: 2 / span 2;
+  width: 50%;
+  height: 100%;
+  max-height: var(--max-image-height);
+}
+
+.crop-container-cactus {
+  grid-row: 1; 
+  grid-column: 3 / span 2;
+  width: 50%;
+  height: 100%;
+  max-height: var(--max-image-height);
+}
+
+.crop-container-cactuses-outside {
+  grid-row: 2;
+  grid-column: 2 / span 2;
+  width: 100%;
+  height: 100%;
+  max-height: var(--max-image-height);
+}
+
+.crop-container-steven-spassov {
+  grid-row: 1;
+  grid-column: 4 / span 2;
+  width: 100%;
+  height: 100%;
+  max-height: var(--max-image-height);
+}
+
+.crop-container-flower {
+  grid-row: 2;
+  grid-column: 4 / span 2;
+  width: 100%;
+  height: 100%;
+  max-height: var(--max-image-height);
+}
+
+.crop-container-dandelion img,
+.crop-container-rasberry img,
+.crop-container-cactus img,
+.crop-container-cactuses-outside img,
+.crop-container-steven-spassov img,
+.crop-container-flower img
+ {
+  width: 100%;
+  height: 100%;
+  /* Anpassa bilderna utan deformation */
+  object-fit: cover;
+}
+@media (min-width: 825px) {
+    .main-container {
+        flex-direction: row-reverse;
+      }
+
+      .submit-container {
+        width: 35%;
+        text-align: start;
+      }
+
+}
+
+
+@media (min-width: 577px) and (max-width: 824px) {
+
+  nav {
+      justify-content: space-between;
+    }
+  
+    .logo-container {
+      align-items: start;
+      gap: 1rem;
+    }
+
+  /* meny för surfplattor */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--clr-primary-light-1);
+    position: absolute;
+    top: 60px;
+    right: 2px;
+    border-radius: 5px;
+    gap: 0;
+
+    li {
+      margin: .3rem 3rem;
+      padding: .5rem;
+
+      a {
+        color: var(--clr-green-400);
+      }
+    }
+  }
+
+  .nav-links.active {
+    display: flex;
+    width: 100%
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+ 
+
+  /* Container */   
+
+  .image-container {
+    grid-template-columns: repeat(3, 1fr);
+    /* Tre kolumner istället för fyra */
+    grid-template-rows: auto;
+    /* Dynamiska rader */
+  }
+
+  .crop-container-dandelion {
+    grid-row: 1;
+    grid-column: 1;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+
+  .crop-container-rasberry {
+    grid-row: 1;
+    grid-column: 2;
+    width: 100%;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+
+  .crop-container-cactus {
+    grid-row: 1;
+    grid-column: 3;
+    width: 100%;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+
+  .crop-container-cactuses-outside {
+    grid-row: 2;
+    grid-column: 1;
+    width: 100%;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+  .crop-container-steven-spassov {
+    grid-row: 2;
+    grid-column: 2;
+    width: 100%;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+
+  .crop-container-flower {
+    grid-row: 2;
+    grid-column: 3;
+    width: 100%;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+
+
+
+  .main-container {
+    flex-direction: column;
+  }
+
+  .submit-container {
+    width: 55%;
+    text-align: start;
+    margin: 2rem;
+  }
+
+}
+
+
+ /* Mobil */
+@media (max-width: 576px) {
+
+/* mobile navigation */
+
+  nav {
+      justify-content: space-between;
+    }
+
+.logo-container {
+    align-items: start;
+    gap: 1rem;
+  }
+
+/* Meny för mobiler */
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: var(--clr-primary-light-1);
+      position: absolute;
+      top: 60px;
+      right: 2px;
+      width: 150px;
+      border-radius: 5px;
+      gap:0;
+
+      li{
+        margin: .3rem 1.8rem;
+        padding: .5rem;
+
+        a{
+          color: var(--clr-green-400);
+        }
+      }
+    }
+
+    .nav-links.active {
+      display: flex;
+      width: 100%
+    }
+
+    .menu-icon {
+      display: flex;
+    }
+
+  /* Container */
+  .container {
+      margin: 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+/* Hero */
+  .hero {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    h3{
+      font-size: var(--fs-600);
+      flex:1;
+    }
+
+    p{
+      text-align: start;
+    }
+  }
+
+  .image-container {
+    grid-template-columns: repeat(2, 1fr);
+    /* Två kolumner istället för fyra */
+    grid-template-rows: 1fr, 1fr, 1fr;
+    /* Dynamiska rader */
+  }
+
+  .crop-container-dandelion {
+    grid-row: 1;
+    grid-column: 1;
+    width: 100%;
+    height: 150px;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+
+  .crop-container-rasberry {
+    grid-row: 1;
+    grid-column: 2;
+    width: 100%;
+    height: 150px;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+
+  .crop-container-cactus {
+    grid-row: 2;
+    grid-column: 1;
+    width: 100%;
+    height: 150px;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+
+  .crop-container-leaf {
+    grid-row: 3;
+    grid-column: 1;
+    width: 100%;
+    height: 150px;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+
+  .crop-container-steven-spassov {
+    grid-row: 3;
+    grid-column: 2;
+    width: 100%;
+    height: 150px;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+
+  .crop-container-flower {
+    grid-row: 3;
+    grid-column: 1;
+    width: 100%;
+    height: 150px;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+
+
+
+  .main-container {
+    flex-direction: column;
+  }
+
+    .submit-container {
+      width: 95%;
+      text-align: start;
+      margin: 2rem;
+    }
+}
+
 
 /* newsletter */
 
 .newsletter-notification{
-  width:50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  width:100%;
+  min-height: 200px;
+  background-color: var(--clr-primary-light-1);
+  box-shadow: var(--border-shadow);
+}
 
-  h3{ 
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-      margin-top: 2rem;
+    padding: 1.9rem .2rem;
+}
+
+  .planting-container {
+    width: 200px;
+    height: 200px;
+    padding: 3.9rem;
+    background-color: var(--clr-green-400);
+    border-radius: 8rem;
+    margin: 0 0;
+    text-align: right;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+
+.submit-container{
+  margin: 2rem;
+    h2 {
+        width: 100%;
+        text-wrap: wrap;
+        text-align: center;
+      }
+
+  .input-container{
+ 
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--clr-primary-dark);
+    border-radius: 1.5rem;
+    margin: 2rem .2rem 0 0;
+
+    .input-field{
+      width: 100%;
+      padding: .5rem;
+      text-align: center;
+      line-height: 1.5rem;
+      border: none;
+      border-radius: 1.5rem;
+      /* Gör att inputfältet fyller hela bredden förutom knappen */
+      flex-grow: 1;
+      outline: none;
+    }
+
+    .submit-btn {
+      border: none;
+      background-color: var(--clr-green-400);
+      color: white;
+      padding: 10px 20px;
+      margin-left: 10px;
+      /* Rundar hörnen på knappen */
+      border-radius: 1.5rem;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--clr-green-800);
+    }
   }
 }
+  /* Plantlist */
+
+  .plant-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: .2rem;
+    padding: 1rem 12rem;
+    margin: 0 10rem;
+    
+      .plant-info > p {
+                padding: 0 0 1.5rem 0;
+                height: 95px;
+                display: flex;
+                align-items: start;
+            }
+
+  .plant-info {
+      display: flex;
+      flex-direction: column;
+      width: 220px;
+      height: 550px;
+      gap: 1rem;
+      padding: .5rem;
+      border: 1px solid var(--clr-primary-dark);
+      border-radius: .3rem;
+      background-color: var(--clr-primary-light-1);
+
+    .plant-image-container {
+        width: auto;
+        height: 250px;
+        overflow: hidden;
+
+        img.plant-image{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+  
+    }
+
+
+.plant-categories{
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: .5rem;
+    }
+    .btn{
+        width: 95px;
+        height: 25px;
+        padding: .2rem .1rem;
+        font-size: var(--fs-100);
+        font-weight: var(--clr-primary);
+        letter-spacing: 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 1rem;
+    }
+
+    .btn-category-flowers{
+      background-color: var(--clr-flower);
+      color: var(--clr-neutral-100);
+
+      &:hover, &:focus-visible {
+          background-color: var(--clr-flower-hover);
+          transform: scale(1.05);
+          text-decoration: none;
+        }
+      
+      &:active {
+          /* Återställ vid klick */
+          transform: scale(1);
+        }
+    }
+    .btn-category-edible{
+      background-color: var(--clr-edible);
+      color: var(--clr-green-100);
+
+      &:hover,
+        &:focus-visible {
+          background-color: var(--clr-edible-hover);
+          transform: scale(1.05);
+          text-decoration: none;
+        }
+      
+        &:active {
+          /* Återställ vid klick */
+          transform: scale(1);
+        }
+    }
+      .btn-category-greenery{
+        background-color: var(--clr-green);
+        color: var(--clr-green-100);
+        border-radius: 1rem;
+
+        &:hover,
+          &:focus-visible {
+            background-color: var(--clr-green-hover);
+            transform: scale(1.05);
+            text-decoration: none;
+          }
+        
+          &:active {
+            /* Återställ vid klick */
+            transform: scale(1);
+          }
+      }
+
+      .btn-category-sun-loving{
+        background-color: var(--clr-sunloving);
+        color: var(--clr-neutral-100);
+
+        &:hover,
+          &:focus-visible {
+            background-color: var(--clr-sunloving-hover);
+            transform: scale(1.05);
+            text-decoration: none;
+          }
+        
+          &:active {
+            /* Återställ vid klick */
+            transform: scale(1);
+          }
+      }
+
+      .btn-category-easy-to-grow{
+        background-color: var(--clr-easy);
+        color: var(--clr-neutral-100);
+
+        &:hover,&:focus-visible {
+            background-color: var(--clr-easy-hover);
+            transform: scale(1.05);
+            text-decoration: none;
+          }
+        
+          &:active {
+            /* Återställ vid klick */
+            transform: scale(1);
+          }
+      }
+    
+      .btn-category-decorative{
+        background-color: var(--clr-decorative);
+        color: var(--clr-neutral-100);
+        
+          &:hover,
+          &:focus-visible {
+            background-color: var(--clr-decorative-hover);
+            transform: scale(1.05);
+            text-decoration: none;
+          }
+        
+          &:active {
+            /* Återställ vid klick */
+            transform: scale(1);
+          }
+        }
+
+      .btn-category-colorful{
+        background-color: var(--clr-colorful);
+        color: var(--clr-neutral-100);
+        
+          &:hover,
+          &:focus-visible {
+            background-color: var(--clr-colorful-hover);
+            transform: scale(1.05);
+            text-decoration: none;
+          }
+        
+          &:active {
+            /* Återställ vid klick */
+            transform: scale(1);
+          }
+        }
+        .btn-category-robust{
+            background-color: var(--clr-robust);
+            color: var(--clr-neutral-100);
+            
+              &:hover,
+              &:focus-visible {
+                background-color: var(--clr-robust-hover);
+                transform: scale(1.05);
+                text-decoration: none;
+              }
+            
+              &:active {
+                /* Återställ vid klick */
+                transform: scale(1);
+              }
+            }
+
+            .btn-category-fast-growing{
+              background-color: var(--clr-fast);
+              color: var(--clr-neutral-100);
+              
+                &:hover,
+                &:focus-visible {
+                  background-color: var(--clr-fast-hover);
+                  transform: scale(1.05);
+                  text-decoration: none;
+                }
+              
+                &:active {
+                  /* Återställ vid klick */
+                  transform: scale(1);
+                }
+              }
+
+              .btn-category-spices{
+                background-color: var(--clr-spices);
+                color: var(--clr-neutral-100);
+              
+                &:hover, &:focus-visible {
+                  background-color: var(--clr-spices-hover);
+                  transform: scale(1.05);
+                  text-decoration: none;
+                }
+              
+                &:active {
+                  /* Återställ vid klick */
+                  transform: scale(1);
+                }
+              }
+
+              .btn-category-fragrant{
+                background-color: var(--clr-fragrant);
+                color: var(--clr-neutral-100);
+              
+                &:hover, &:focus-visible {
+                  background-color: var(--clr-fragrant-hover);
+                  transform: scale(1.05);
+                  text-decoration: none;
+                }
+              
+                &:active {
+                  /* Återställ vid klick */
+                  transform: scale(1);
+                }
+              }
+            }
+          }
+        
+      /* Avatar */
+      .avatar {
+        display: flex;
+        align-items: start;
+        gap: 2rem;
+        padding-top: .5rem;
+
+        .avatar-info{
+          display: flex;
+          flex-direction: column;
+          gap: .2rem;
+        }
+      }
+      .avatar-image {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid var(--clr-primary-dark);
+      }
+      /* Previous-cultivations */
+      .main-cultivations {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 .2rem;
+      }
+
+      .previous-cultivations{
+          display:flex;
+          justify-content: center;
+          width: 100%;
+          min-height: 200px;
+          background-color: var(--clr-primary-light-1);
+          box-shadow: var(--border-shadow);
+      }
+
+        .cultivations-container{
+          width: 180px;
+          height: 180px;
+          padding: 3.9rem;
+          background-color: var(--clr-green-400);
+          border-radius: 25rem;
+          text-align: right;
+
+          .planting-container {
+              margin: 2rem;
+              text-align: right;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+      }
+   
+      }
+      .box-container {
+        padding: 4rem;
+        display:flex;
+        flex-direction: column;
+        align-items: start;
+        justify-self: flex-start;
+        width: 60%;
+
+        h2{
+            text-align: start;
+            padding: 2rem 0;
+        }
+
+        p {  
+          text-align: start;
+          /* margin-bottom: 1rem; */
+        }
+         .btn-container{
+            display:flex;
+            align-self: flex-end;
+        
+
+        .btn-planted-seedings{
+          border: none;
+          background-color: var(--clr-green-400);
+          color: white;
+          padding: 10px 20px;
+          margin-left: 10px;
+          border-radius: 1.5rem;
+          cursor: pointer;
+        }
+     }
+  }
+
+
+
+
