@@ -714,10 +714,14 @@ nav{
       /* Rundar hörnen på knappen */
       border-radius: 1.5rem;
       cursor: pointer;
+      transition: all 0.3s ease-out;
     }
 
     .submit-btn:hover {
-      background-color: var(--clr-green-800);
+      background-color: var(--clr-green-hover);
+      box-shadow: var(--border-shadow);
+      transition: all 0.3s ease-in;
+      transform: scale(1.02);
     }
   }
 }
@@ -727,12 +731,12 @@ nav{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
-    gap: .2rem;
+    gap: .8rem;
     padding: 1rem 12rem;
     margin: 0 10rem;
     
       .plant-info > p {
-                padding: 0 0 1.5rem 0;
+                /* padding: 0 0 1.5rem 0; */
                 height: 95px;
                 display: flex;
                 align-items: start;
@@ -743,10 +747,8 @@ nav{
       flex-direction: column;
       width: 220px;
       height: 550px;
-      gap: 1rem;
-      padding: .5rem;
-      border: 1px solid var(--clr-primary-dark);
-      border-radius: .3rem;
+      gap: .9rem;
+      padding: .6rem;
       background-color: var(--clr-primary-light-1);
 
     .plant-image-container {
@@ -786,10 +788,13 @@ nav{
     .btn-category-flowers{
       background-color: var(--clr-flower);
       color: var(--clr-neutral-100);
+      transition: all 0.3s ease-out;
 
       &:hover, &:focus-visible {
           background-color: var(--clr-flower-hover);
-          transform: scale(1.05);
+          box-shadow: var(--border-shadow);
+          transition: all 0.3s ease-in;
+          transform: scale(1.02);
           text-decoration: none;
         }
       
@@ -801,11 +806,14 @@ nav{
     .btn-category-edible{
       background-color: var(--clr-edible);
       color: var(--clr-green-100);
+        transition: all 0.3s ease-out;
 
       &:hover,
         &:focus-visible {
           background-color: var(--clr-edible-hover);
-          transform: scale(1.05);
+          box-shadow: var(--border-shadow);
+          transition: all 0.3s ease-in;
+          transform: scale(1.02);
           text-decoration: none;
         }
       
@@ -818,12 +826,15 @@ nav{
         background-color: var(--clr-green);
         color: var(--clr-green-100);
         border-radius: 1rem;
+          transition: all 0.3s ease-out;
 
         &:hover,
           &:focus-visible {
             background-color: var(--clr-green-hover);
-            transform: scale(1.05);
-            text-decoration: none;
+              box-shadow: var(--border-shadow);
+              transition: all 0.3s ease-in;
+              transform: scale(1.02);
+              text-decoration: none;
           }
         
           &:active {
@@ -835,12 +846,15 @@ nav{
       .btn-category-sun-loving{
         background-color: var(--clr-sunloving);
         color: var(--clr-neutral-100);
+          transition: all 0.3s ease-out;
 
         &:hover,
           &:focus-visible {
             background-color: var(--clr-sunloving-hover);
-            transform: scale(1.05);
-            text-decoration: none;
+              box-shadow: var(--border-shadow);
+              transition: all 0.3s ease-in;
+              transform: scale(1.02);
+              text-decoration: none;
           }
         
           &:active {
@@ -852,11 +866,14 @@ nav{
       .btn-category-easy-to-grow{
         background-color: var(--clr-easy);
         color: var(--clr-neutral-100);
+          transition: all 0.3s ease-out;
 
         &:hover,&:focus-visible {
             background-color: var(--clr-easy-hover);
-            transform: scale(1.05);
-            text-decoration: none;
+              box-shadow: var(--border-shadow);
+              transition: all 0.3s ease-in;
+              transform: scale(1.02);
+              text-decoration: none;
           }
         
           &:active {
@@ -868,12 +885,15 @@ nav{
       .btn-category-decorative{
         background-color: var(--clr-decorative);
         color: var(--clr-neutral-100);
+          transition: all 0.3s ease-out;
         
           &:hover,
           &:focus-visible {
             background-color: var(--clr-decorative-hover);
-            transform: scale(1.05);
-            text-decoration: none;
+              box-shadow: var(--border-shadow);
+              transition: all 0.3s ease-in;
+              transform: scale(1.02);
+              text-decoration: none;
           }
         
           &:active {
@@ -885,12 +905,15 @@ nav{
       .btn-category-colorful{
         background-color: var(--clr-colorful);
         color: var(--clr-neutral-100);
+          transition: all 0.3s ease-out;
         
           &:hover,
           &:focus-visible {
             background-color: var(--clr-colorful-hover);
-            transform: scale(1.05);
-            text-decoration: none;
+              box-shadow: var(--border-shadow);
+              transition: all 0.3s ease-in;
+              transform: scale(1.02);
+              text-decoration: none;
           }
         
           &:active {
@@ -901,12 +924,15 @@ nav{
         .btn-category-robust{
             background-color: var(--clr-robust);
             color: var(--clr-neutral-100);
+              transition: all 0.3s ease-out;
             
               &:hover,
               &:focus-visible {
                 background-color: var(--clr-robust-hover);
-                transform: scale(1.05);
-                text-decoration: none;
+                  box-shadow: var(--border-shadow);
+                  transition: all 0.3s ease-in;
+                  transform: scale(1.02);
+                  text-decoration: none;
               }
             
               &:active {
@@ -918,11 +944,14 @@ nav{
             .btn-category-fast-growing{
               background-color: var(--clr-fast);
               color: var(--clr-neutral-100);
+                transition: all 0.3s ease-out;
               
                 &:hover,
                 &:focus-visible {
                   background-color: var(--clr-fast-hover);
-                  transform: scale(1.05);
+                  box-shadow: var(--border-shadow);
+                  transition: all 0.3s ease-in;
+                  transform: scale(1.02);
                   text-decoration: none;
                 }
               
@@ -935,10 +964,13 @@ nav{
               .btn-category-spices{
                 background-color: var(--clr-spices);
                 color: var(--clr-neutral-100);
+                  transition: all 0.3s ease-out;
               
                 &:hover, &:focus-visible {
                   background-color: var(--clr-spices-hover);
-                  transform: scale(1.05);
+                  box-shadow: var(--border-shadow);
+                  transform: scale(1.02);
+                  transition: all 0.3s ease-in;
                   text-decoration: none;
                 }
               
@@ -951,10 +983,13 @@ nav{
               .btn-category-fragrant{
                 background-color: var(--clr-fragrant);
                 color: var(--clr-neutral-100);
+                  transition: all 0.3s ease-out;
               
                 &:hover, &:focus-visible {
                   background-color: var(--clr-fragrant-hover);
-                  transform: scale(1.05);
+                  box-shadow: var(--border-shadow);
+                  transform: scale(1.02);
+                  transition: all 0.3s ease-in;
                   text-decoration: none;
                 }
               
@@ -971,7 +1006,7 @@ nav{
         display: flex;
         align-items: start;
         gap: 2rem;
-        padding-top: .5rem;
+        margin-top: 1.9rem;
 
         .avatar-info{
           display: flex;
@@ -1054,8 +1089,37 @@ nav{
           margin-left: 10px;
           border-radius: 1.5rem;
           cursor: pointer;
+          transition: all 0.3s ease-out;
+
+            &:hover, &:focus-visible{
+              background-color: var(--clr-green-hover);
+              box-shadow: var(--border-shadow);
+              transform: scale(1.01);
+              transition: all 0.3s ease-in;
+              text-decoration: none;
+
+          }
         }
      }
+  }
+
+  /* footer */
+
+  footer.footer-main{
+    background-color: var(--clr-green-400);
+    .logo-footer-container{
+      display: flex;
+      padding: 1rem 0 0 .5rem;
+
+      .logo-footer-text{
+        padding: .2rem 0 0 .5rem;
+      } 
+    }
+
+    span, p{
+      color: var(--clr-neutral-100);
+     
+    }
   }
 
 
