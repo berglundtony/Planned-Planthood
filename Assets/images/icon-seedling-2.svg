@@ -16,13 +16,13 @@ xmlns="http://www.w3.org/2000/svg"
     <path
         d="M3.89136 3H21.5508C29.4114 3 35.7838 9.37232 35.7838 17.233V17.233H18.1243C10.2637 17.233 3.89136 10.8607 3.89136 3V3Z"
         stroke="white"
-        stroke-width="6"
+        stroke-width="7"
         stroke-linejoin="round"
     />
     <path
         d="M67.6763 10.1165H50.0168C42.1562 10.1165 35.7839 16.4888 35.7839 24.3495V24.3495H53.4433C61.3039 24.3495 67.6763 17.9771 67.6763 10.1165V10.1165Z"
         stroke="white"
-        stroke-width="6"
+        stroke-width="7"
         stroke-linejoin="round"
     />
 </svg>

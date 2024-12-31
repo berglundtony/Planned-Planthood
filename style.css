@@ -52,7 +52,7 @@ figcaption {
 }
 
 /* for container queries, landmarks as containers */
-body > :is(header, footer),
+body> :is(header, footer),
 main {
   container-type: inline-size;
 }
@@ -104,7 +104,7 @@ main {
   --clr-fast: hsl(218, 11%, 34%);
   --clr-fast-hover: hsl(218, 11%, 34%, 0.8);
   --clr-spices: hsl(120, 92%, 45%);
-  --clr-spices-hover:  hsl(120, 92%, 45%, 0.8);
+  --clr-spices-hover: hsl(120, 92%, 45%, 0.8);
 
   --border-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
@@ -141,12 +141,12 @@ main {
   --fw-bold: var(--fw-700);
   --fw-x-bold: var(--fw-900);
 
-    --max-container-height: 600px;
-    --min-container-height: 400px;
-    --max-container-width: 900px;
-    --min-image-height: 150px;
-    --min-image-width: 150px;
-    --max-image-height: 250px;
+  --max-container-height: 600px;
+  --min-container-height: 400px;
+  --max-container-width: 900px;
+  --min-image-height: 150px;
+  --min-image-width: 150px;
+  --max-image-height: 250px;
 }
 
 /* Utilities */
@@ -161,7 +161,7 @@ main {
 }
 
 /* Composition */
-.flow > * + * {
+.flow>*+* {
   margin-block-start: var(--flow-space, 1em);
 }
 
@@ -184,7 +184,7 @@ a {
   text-decoration: none;
   color: var(--clr-accent);
   text-transform: uppercase;
-  
+
 
   &:hover,
   &:focus-visible {
@@ -199,7 +199,7 @@ body {
   color: var(--clr-primary-dark);
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -208,34 +208,30 @@ body {
 
 /* Logotype */
 
-.logo-container{
+.logo-container {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-#logo, .logo-text{
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-   
-}
-
-#logo{
-  width: 30px;
-  height: 30px;
+#logo {
+  width: 60px;
+  height: 60px;
+  padding-right: .5rem;
 }
 
 .logo-text {
-  font-size: var(--fs-200);
+  font-size: var(--fs-400);
   font-weight: var(--fw-semi-bold);
   color: var(--clr-green-400);
   text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 /* navigation */
-
-nav{
+nav {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -244,12 +240,12 @@ nav{
   background-color: var(--clr-primary-light-1);
 }
 
-.nav-links{
+.nav-links {
   display: flex;
   gap: 3rem;
   margin-left: 5rem;
 
-  li{
+  li {
     list-style: none;
   }
 }
@@ -270,35 +266,35 @@ nav{
 
 /* hero */
 
-.hero{
-  width:100%;
+.hero {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  padding: 2rem;
+  padding: 1.5rem;
 
-  h3{
-    font-size: var(--fs-600);
+  h2 {
     font-weight: var(--fw-bold);
     text-align: center;
+    margin-top: 1.5rem;
   }
 
-  p{
+  p {
     font-size: var(--fs-400);
     text-align: center;
   }
 }
 
-.image-container{
+.image-container {
   display: grid;
-    /* Tre kolumner */
+  /* Tre kolumner */
   grid-template-columns: repeat(5, 1fr);
-    /* Två rader */
+  /* Två rader */
   grid-template-rows: 1fr 1fr;
   height: 100%;
-  min-height: var(--min-container-height );
+  min-height: var(--min-container-height);
   max-height: var(--max-container-height);
   max-width: var(--max-container-width);
   border: 10px solid var(--clr-neutral-100);
@@ -313,7 +309,7 @@ nav{
 }
 
 .crop-container-dandelion {
-  grid-row: 1 / span 2; 
+  grid-row: 1 / span 2;
   grid-column: 1;
   min-width: 280px;
   width: 100%;
@@ -329,7 +325,7 @@ nav{
 }
 
 .crop-container-cactus {
-  grid-row: 1; 
+  grid-row: 1;
   grid-column: 3 / span 2;
   width: 50%;
   height: 100%;
@@ -365,22 +361,28 @@ nav{
 .crop-container-cactus img,
 .crop-container-cactuses-outside img,
 .crop-container-steven-spassov img,
-.crop-container-flower img
- {
+.crop-container-flower img {
   width: 100%;
   height: 100%;
   /* Anpassa bilderna utan deformation */
   object-fit: cover;
 }
-@media (min-width: 825px) {
-    .main-container {
-        flex-direction: row-reverse;
-      }
 
-      .submit-container {
-        width: 35%;
-        text-align: start;
-      }
+@media (min-width: 825) {
+  .main-container {
+    flex-direction: row-reverse;
+  }
+
+  .submit-container {
+    width: 35%;
+    text-align: start;
+  }
+
+  .input-container {
+    width: 100%;
+    margin: 1rem 2.5rem 0 0;
+  }
+
 
 }
 
@@ -388,13 +390,13 @@ nav{
 @media (min-width: 577px) and (max-width: 824px) {
 
   nav {
-      justify-content: space-between;
-    }
-  
-    .logo-container {
-      align-items: start;
-      gap: 1rem;
-    }
+    justify-content: space-between;
+  }
+
+  .logo-container {
+    align-items: start;
+    gap: 1rem;
+  }
 
   /* meny för surfplattor */
   .nav-links {
@@ -425,9 +427,9 @@ nav{
   .menu-icon {
     display: flex;
   }
- 
 
-  /* Container */   
+
+  /* Container */
 
   .image-container {
     grid-template-columns: repeat(3, 1fr);
@@ -466,6 +468,7 @@ nav{
     max-height: var(--max-image-height);
     min-width: var(--min-image-width);
   }
+
   .crop-container-steven-spassov {
     grid-row: 2;
     grid-column: 2;
@@ -497,73 +500,97 @@ nav{
 }
 
 
- /* Mobil */
+/* Mobil */
 @media (max-width: 576px) {
 
-/* mobile navigation */
+  /* mobile navigation */
 
   nav {
-      justify-content: space-between;
-    }
+    justify-content: space-between;
+  }
 
-.logo-container {
+  .logo-container {
     align-items: start;
     gap: 1rem;
   }
 
-/* Meny för mobiler */
+  /* Meny för mobiler */
   .nav-links {
-      display: none;
-      flex-direction: column;
-      background-color: var(--clr-primary-light-1);
-      position: absolute;
-      top: 60px;
-      right: 2px;
-      width: 150px;
-      border-radius: 5px;
-      gap:0;
+    display: none;
+    flex-direction: column;
+    background-color: var(--clr-primary-light-1);
+    position: absolute;
+    top: 60px;
+    right: 2px;
+    width: 150px;
+    border-radius: 5px;
+    gap: 0;
 
-      li{
-        margin: .3rem 1.8rem;
-        padding: .5rem;
+    li {
+      margin: .3rem 1.8rem;
+      padding: .5rem;
 
-        a{
-          color: var(--clr-green-400);
-        }
+      a {
+        color: var(--clr-green-400);
       }
     }
+  }
 
-    .nav-links.active {
-      display: flex;
-      width: 100%
-    }
+  .nav-links.active {
+    display: flex;
+    width: 100%
+  }
 
-    .menu-icon {
-      display: flex;
-    }
+  .menu-icon {
+    display: flex;
+  }
 
   /* Container */
   .container {
-      margin: 0 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
+    margin: 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .main-container {
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1.9rem;
+  }
+
+  .submit-container {
+    width: 75%;
+    text-align: center;
+    margin: 1rem;
+
+    h2 {
+      text-align: center;
     }
 
-/* Hero */
+    .input-container {
+      width: 90%;
+      margin: 1rem .5rem 0 .9rem;
+    }
+  }
+
+  /* Hero */
   .hero {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 
-    h3{
+    h3 {
       font-size: var(--fs-600);
-      flex:1;
+      flex: 1;
     }
 
-    p{
+    p {
       text-align: start;
     }
   }
@@ -571,7 +598,7 @@ nav{
   .image-container {
     grid-template-columns: repeat(2, 1fr);
     /* Två kolumner istället för fyra */
-    grid-template-rows: 1fr, 1fr, 1fr;
+    grid-template-rows: auto;
     /* Dynamiska rader */
   }
 
@@ -629,72 +656,71 @@ nav{
     min-width: var(--min-image-width);
   }
 
-
-
   .main-container {
     flex-direction: column;
   }
 
-    .submit-container {
-      width: 95%;
-      text-align: start;
-      margin: 2rem;
-    }
+  .submit-container {
+    width: 95%;
+    margin: 4rem;
+  }
 }
 
 
 /* newsletter */
 
-.newsletter-notification{
-  width:100%;
+.newsletter-notification {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   min-height: 200px;
   background-color: var(--clr-primary-light-1);
   box-shadow: var(--border-shadow);
 }
 
-.main-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 1.9rem .2rem;
+.main-container {
+  max-width: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 1.9rem 0;
 }
 
-  .planting-container {
-    width: 200px;
-    height: 200px;
-    padding: 3.9rem;
-    background-color: var(--clr-green-400);
-    border-radius: 8rem;
-    margin: 0 0;
-    text-align: right;
+.planting-container {
+  width: 370px;
+  height: 200px;
+  padding: 2.5rem 2.9rem 3.3rem 2.9rem;
+  /* margin-left: 2rem; */
+  background-color: var(--clr-green-400);
+  border-radius: 50%;
+  text-align: center;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-  
+}
 
-.submit-container{
+
+.submit-container {
   margin: 2rem;
-    h2 {
-        width: 100%;
-        text-wrap: wrap;
-        text-align: center;
-      }
 
-  .input-container{
- 
+  h2 {
+    width: 100%;
+    text-wrap: wrap;
+    padding: 0 .3rem 1rem 0;
+  }
+
+  .input-container {
     display: flex;
     align-items: center;
     border: 2px solid var(--clr-primary-dark);
     border-radius: 1.5rem;
-    margin: 2rem .2rem 0 0;
 
-    .input-field{
-      width: 100%;
+    .input-field {
       padding: .5rem;
       text-align: center;
       line-height: 1.5rem;
@@ -725,403 +751,632 @@ nav{
     }
   }
 }
-  /* Plantlist */
 
-  .plant-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    gap: .8rem;
-    padding: 1rem 12rem;
-    margin: 0 10rem;
-    
-      .plant-info > p {
-                /* padding: 0 0 1.5rem 0; */
-                height: 95px;
-                display: flex;
-                align-items: start;
-            }
+/* Plantlist */
+
+.plant-list {
+  display: grid;
+  gap: 1.2rem;
+  padding: 1.5rem 2rem;
+  margin: 0 10rem;
+
+  .plant-info>p {
+    height: auto;
+    display: flex;
+    align-items: start;
+  }
 
   .plant-info {
-      display: flex;
-      flex-direction: column;
-      width: 220px;
-      height: 550px;
-      gap: .9rem;
-      padding: .6rem;
-      background-color: var(--clr-primary-light-1);
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    height: 550px;
+    gap: .3rem;
+    padding: .6rem;
+    background-color: var(--clr-primary-light-1);
+    border: 5px solid var(--clr-neutral-100);
+    box-shadow: var(--border-shadow);
 
     .plant-image-container {
-        width: auto;
-        height: 250px;
-        overflow: hidden;
+      position: relative;
+      width: auto;
+      height: 220px;
+      overflow: hidden;
 
-        img.plant-image{
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-  
+
+      img.plant-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .overlay-svg {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        opacity: 0.33;
+        pointer-events: none;
+      }
     }
 
 
-.plant-categories{
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: .5rem;
-    }
-    .btn{
-        width: 95px;
-        height: 25px;
-        padding: .2rem .1rem;
-        font-size: var(--fs-100);
-        font-weight: var(--clr-primary);
-        letter-spacing: 1px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        border-radius: 1rem;
+    .plant-categories {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: .3rem;
+      margin: 0.6rem 0;
     }
 
-    .btn-category-flowers{
+    .btn {
+      width: auto;
+      height: 25px;
+      padding: 0 .8rem;
+      font-size: var(--fs-100);
+      font-weight: var(--clr-primary);
+      letter-spacing: 1px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 1rem;
+    }
+
+    .btn-category-flowers {
       background-color: var(--clr-flower);
       color: var(--clr-neutral-100);
       transition: all 0.3s ease-out;
 
-      &:hover, &:focus-visible {
-          background-color: var(--clr-flower-hover);
-          box-shadow: var(--border-shadow);
-          transition: all 0.3s ease-in;
-          transform: scale(1.02);
-          text-decoration: none;
-        }
-      
+      &:hover,
+      &:focus-visible {
+        background-color: var(--clr-flower-hover);
+        box-shadow: var(--border-shadow);
+        transition: all 0.3s ease-in;
+        transform: scale(1.02);
+        text-decoration: none;
+      }
+
       &:active {
-          /* Återställ vid klick */
-          transform: scale(1);
-        }
+        /* Återställ vid klick */
+        transform: scale(1);
+      }
     }
-    .btn-category-edible{
+
+    .btn-category-edible {
       background-color: var(--clr-edible);
       color: var(--clr-green-100);
-        transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out;
 
       &:hover,
-        &:focus-visible {
-          background-color: var(--clr-edible-hover);
-          box-shadow: var(--border-shadow);
-          transition: all 0.3s ease-in;
-          transform: scale(1.02);
-          text-decoration: none;
-        }
-      
-        &:active {
-          /* Återställ vid klick */
-          transform: scale(1);
-        }
-    }
-      .btn-category-greenery{
-        background-color: var(--clr-green);
-        color: var(--clr-green-100);
-        border-radius: 1rem;
-          transition: all 0.3s ease-out;
-
-        &:hover,
-          &:focus-visible {
-            background-color: var(--clr-green-hover);
-              box-shadow: var(--border-shadow);
-              transition: all 0.3s ease-in;
-              transform: scale(1.02);
-              text-decoration: none;
-          }
-        
-          &:active {
-            /* Återställ vid klick */
-            transform: scale(1);
-          }
+      &:focus-visible {
+        background-color: var(--clr-edible-hover);
+        box-shadow: var(--border-shadow);
+        transition: all 0.3s ease-in;
+        transform: scale(1.02);
+        text-decoration: none;
       }
 
-      .btn-category-sun-loving{
-        background-color: var(--clr-sunloving);
-        color: var(--clr-neutral-100);
-          transition: all 0.3s ease-out;
-
-        &:hover,
-          &:focus-visible {
-            background-color: var(--clr-sunloving-hover);
-              box-shadow: var(--border-shadow);
-              transition: all 0.3s ease-in;
-              transform: scale(1.02);
-              text-decoration: none;
-          }
-        
-          &:active {
-            /* Återställ vid klick */
-            transform: scale(1);
-          }
+      &:active {
+        /* Återställ vid klick */
+        transform: scale(1);
       }
-
-      .btn-category-easy-to-grow{
-        background-color: var(--clr-easy);
-        color: var(--clr-neutral-100);
-          transition: all 0.3s ease-out;
-
-        &:hover,&:focus-visible {
-            background-color: var(--clr-easy-hover);
-              box-shadow: var(--border-shadow);
-              transition: all 0.3s ease-in;
-              transform: scale(1.02);
-              text-decoration: none;
-          }
-        
-          &:active {
-            /* Återställ vid klick */
-            transform: scale(1);
-          }
-      }
-    
-      .btn-category-decorative{
-        background-color: var(--clr-decorative);
-        color: var(--clr-neutral-100);
-          transition: all 0.3s ease-out;
-        
-          &:hover,
-          &:focus-visible {
-            background-color: var(--clr-decorative-hover);
-              box-shadow: var(--border-shadow);
-              transition: all 0.3s ease-in;
-              transform: scale(1.02);
-              text-decoration: none;
-          }
-        
-          &:active {
-            /* Återställ vid klick */
-            transform: scale(1);
-          }
-        }
-
-      .btn-category-colorful{
-        background-color: var(--clr-colorful);
-        color: var(--clr-neutral-100);
-          transition: all 0.3s ease-out;
-        
-          &:hover,
-          &:focus-visible {
-            background-color: var(--clr-colorful-hover);
-              box-shadow: var(--border-shadow);
-              transition: all 0.3s ease-in;
-              transform: scale(1.02);
-              text-decoration: none;
-          }
-        
-          &:active {
-            /* Återställ vid klick */
-            transform: scale(1);
-          }
-        }
-        .btn-category-robust{
-            background-color: var(--clr-robust);
-            color: var(--clr-neutral-100);
-              transition: all 0.3s ease-out;
-            
-              &:hover,
-              &:focus-visible {
-                background-color: var(--clr-robust-hover);
-                  box-shadow: var(--border-shadow);
-                  transition: all 0.3s ease-in;
-                  transform: scale(1.02);
-                  text-decoration: none;
-              }
-            
-              &:active {
-                /* Återställ vid klick */
-                transform: scale(1);
-              }
-            }
-
-            .btn-category-fast-growing{
-              background-color: var(--clr-fast);
-              color: var(--clr-neutral-100);
-                transition: all 0.3s ease-out;
-              
-                &:hover,
-                &:focus-visible {
-                  background-color: var(--clr-fast-hover);
-                  box-shadow: var(--border-shadow);
-                  transition: all 0.3s ease-in;
-                  transform: scale(1.02);
-                  text-decoration: none;
-                }
-              
-                &:active {
-                  /* Återställ vid klick */
-                  transform: scale(1);
-                }
-              }
-
-              .btn-category-spices{
-                background-color: var(--clr-spices);
-                color: var(--clr-neutral-100);
-                  transition: all 0.3s ease-out;
-              
-                &:hover, &:focus-visible {
-                  background-color: var(--clr-spices-hover);
-                  box-shadow: var(--border-shadow);
-                  transform: scale(1.02);
-                  transition: all 0.3s ease-in;
-                  text-decoration: none;
-                }
-              
-                &:active {
-                  /* Återställ vid klick */
-                  transform: scale(1);
-                }
-              }
-
-              .btn-category-fragrant{
-                background-color: var(--clr-fragrant);
-                color: var(--clr-neutral-100);
-                  transition: all 0.3s ease-out;
-              
-                &:hover, &:focus-visible {
-                  background-color: var(--clr-fragrant-hover);
-                  box-shadow: var(--border-shadow);
-                  transform: scale(1.02);
-                  transition: all 0.3s ease-in;
-                  text-decoration: none;
-                }
-              
-                &:active {
-                  /* Återställ vid klick */
-                  transform: scale(1);
-                }
-              }
-            }
-          }
-        
-      /* Avatar */
-      .avatar {
-        display: flex;
-        align-items: start;
-        gap: 2rem;
-        margin-top: 1.9rem;
-
-        .avatar-info{
-          display: flex;
-          flex-direction: column;
-          gap: .2rem;
-        }
-      }
-      .avatar-image {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 1px solid var(--clr-primary-dark);
-      }
-      /* Previous-cultivations */
-      .main-cultivations {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 0 .2rem;
-      }
-
-      .previous-cultivations{
-          display:flex;
-          justify-content: center;
-          width: 100%;
-          min-height: 200px;
-          background-color: var(--clr-primary-light-1);
-          box-shadow: var(--border-shadow);
-      }
-
-        .cultivations-container{
-          width: 180px;
-          height: 180px;
-          padding: 3.9rem;
-          background-color: var(--clr-green-400);
-          border-radius: 25rem;
-          text-align: right;
-
-          .planting-container {
-              margin: 2rem;
-              text-align: right;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-      }
-   
-      }
-      .box-container {
-        padding: 4rem;
-        display:flex;
-        flex-direction: column;
-        align-items: start;
-        justify-self: flex-start;
-        width: 60%;
-
-        h2{
-            text-align: start;
-            padding: 2rem 0;
-        }
-
-        p {  
-          text-align: start;
-          /* margin-bottom: 1rem; */
-        }
-         .btn-container{
-            display:flex;
-            align-self: flex-end;
-        
-
-        .btn-planted-seedings{
-          border: none;
-          background-color: var(--clr-green-400);
-          color: white;
-          padding: 10px 20px;
-          margin-left: 10px;
-          border-radius: 1.5rem;
-          cursor: pointer;
-          transition: all 0.3s ease-out;
-
-            &:hover, &:focus-visible{
-              background-color: var(--clr-green-hover);
-              box-shadow: var(--border-shadow);
-              transform: scale(1.01);
-              transition: all 0.3s ease-in;
-              text-decoration: none;
-
-          }
-        }
-     }
-  }
-
-  /* footer */
-
-  footer.footer-main{
-    background-color: var(--clr-green-400);
-    .logo-footer-container{
-      display: flex;
-      padding: 1rem 0 0 .5rem;
-
-      .logo-footer-text{
-        padding: .2rem 0 0 .5rem;
-      } 
     }
 
-    span, p{
+    .btn-category-greenery {
+      background-color: var(--clr-green);
+      color: var(--clr-green-100);
+      border-radius: 1rem;
+      transition: all 0.3s ease-out;
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--clr-green-hover);
+        box-shadow: var(--border-shadow);
+        transition: all 0.3s ease-in;
+        transform: scale(1.02);
+        text-decoration: none;
+      }
+
+      &:active {
+        /* Återställ vid klick */
+        transform: scale(1);
+      }
+    }
+
+    .btn-category-sun-loving {
+      background-color: var(--clr-sunloving);
       color: var(--clr-neutral-100);
-     
+      transition: all 0.3s ease-out;
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--clr-sunloving-hover);
+        box-shadow: var(--border-shadow);
+        transition: all 0.3s ease-in;
+        transform: scale(1.02);
+        text-decoration: none;
+      }
+
+      &:active {
+        /* Återställ vid klick */
+        transform: scale(1);
+      }
+    }
+
+    .btn-category-easy-to-grow {
+      background-color: var(--clr-easy);
+      color: var(--clr-neutral-100);
+      transition: all 0.3s ease-out;
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--clr-easy-hover);
+        box-shadow: var(--border-shadow);
+        transition: all 0.3s ease-in;
+        transform: scale(1.02);
+        text-decoration: none;
+      }
+
+      &:active {
+        /* Återställ vid klick */
+        transform: scale(1);
+      }
+    }
+
+    .btn-category-decorative {
+      background-color: var(--clr-decorative);
+      color: var(--clr-neutral-100);
+      transition: all 0.3s ease-out;
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--clr-decorative-hover);
+        box-shadow: var(--border-shadow);
+        transition: all 0.3s ease-in;
+        transform: scale(1.02);
+        text-decoration: none;
+      }
+
+      &:active {
+        /* Återställ vid klick */
+        transform: scale(1);
+      }
+    }
+
+    .btn-category-colorful {
+      background-color: var(--clr-colorful);
+      color: var(--clr-neutral-100);
+      transition: all 0.3s ease-out;
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--clr-colorful-hover);
+        box-shadow: var(--border-shadow);
+        transition: all 0.3s ease-in;
+        transform: scale(1.02);
+        text-decoration: none;
+      }
+
+      &:active {
+        /* Återställ vid klick */
+        transform: scale(1);
+      }
+    }
+
+    .btn-category-robust {
+      background-color: var(--clr-robust);
+      color: var(--clr-neutral-100);
+      transition: all 0.3s ease-out;
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--clr-robust-hover);
+        box-shadow: var(--border-shadow);
+        transition: all 0.3s ease-in;
+        transform: scale(1.02);
+        text-decoration: none;
+      }
+
+      &:active {
+        /* Återställ vid klick */
+        transform: scale(1);
+      }
+    }
+
+    .btn-category-fast-growing {
+      background-color: var(--clr-fast);
+      color: var(--clr-neutral-100);
+      transition: all 0.3s ease-out;
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--clr-fast-hover);
+        box-shadow: var(--border-shadow);
+        transition: all 0.3s ease-in;
+        transform: scale(1.02);
+        text-decoration: none;
+      }
+
+      &:active {
+        /* Återställ vid klick */
+        transform: scale(1);
+      }
+    }
+
+    .btn-category-spices {
+      background-color: var(--clr-spices);
+      color: var(--clr-neutral-100);
+      transition: all 0.3s ease-out;
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--clr-spices-hover);
+        box-shadow: var(--border-shadow);
+        transform: scale(1.02);
+        transition: all 0.3s ease-in;
+        text-decoration: none;
+      }
+
+      &:active {
+        /* Återställ vid klick */
+        transform: scale(1);
+      }
+    }
+
+    .btn-category-fragrant {
+      background-color: var(--clr-fragrant);
+      color: var(--clr-neutral-100);
+      transition: all 0.3s ease-out;
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--clr-fragrant-hover);
+        box-shadow: var(--border-shadow);
+        transform: scale(1.02);
+        transition: all 0.3s ease-in;
+        text-decoration: none;
+      }
+
+      &:active {
+        /* Återställ vid klick */
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+/* Avatar */
+.avatar {
+  display: flex;
+  align-items: start;
+  gap: 2rem;
+  margin-top: auto;
+
+  .avatar-info {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+  }
+}
+
+.avatar-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--clr-primary-dark);
+}
+
+@media (min-width: 825px) {
+  .main-container {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .plant-list {
+    grid-template-columns: repeat(4, 1fr);
+
+    .plant-image-container {
+      width: 80%;
+      aspect-ratio: 1/1;
+
+      .overlay-svg {
+        top: 30%;
+        left: 30%;
+      }
     }
   }
 
+}
+
+@media (min-width: 577px) and (max-width: 824px) {
+
+  /* Newsletter */
+
+  .main-container {
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 4rem 0 0;
+  }
+
+  .planting-container {
+    width: 180px;
+    height: 180px;
+    padding: 2.5rem 2.9rem 3.3rem 2.9rem;
+    margin-left: 2rem;
+    background-color: var(--clr-green-400);
+    border-radius: 50%;
+    text-align: center;
+  }
+
+  /* Plantlist tablet */
+  .plant-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 1.5rem;
+    padding: .5rem 1rem;
+    margin: .5rem 0;
+    width: 100%;
+    height: auto;
+
+    .plant-info {
+      width: 100%;
+      height: auto;
+      border: 10px solid var(--clr-neutral-100);
+      min-height: 490px;
+    }
+
+    .plant-image-container {
+      width: 80%;
+      aspect-ratio: 1/1;
+
+      .overlay-svg {
+        top: 30%;
+        left: 35%;
+      }
+    }
+  }
+
+  /* Previous cultivations */
+  .main-cultivations {
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem 2rem 0 0;
+
+    .box-container {
+      align-items: center;
+      width: 100%;
+
+      h2,
+      p {
+        text-align: center;
+      }
+    }
+  }
+
+  .btn-container {
+    margin-top: 1rem;
+    ;
+  }
+
+  .footer-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .planting-container {
+    width: 170px;
+    width: 200px;
+  }
+
+  /* Plantlist mobile */
+  .plant-list {
+    display: grid;
+    width: 100%;
+    gap: .9rem;
+    padding: 1.5rem 1rem;
+    margin: 0 2rem;
+
+    .plant-info {
+      width: 100%;
+      height: 480px;
+    }
+
+    .plant-image-container {
+      width: 80%;
+      aspect-ratio: 1/1;
+
+      .overlay-svg {
+        top: 30%;
+        left: 35%;
+      }
+    }
+  }
+
+  .input-container {
+    width: 80%;
+  }
+
+  /* Previous cultivations */
+  .main-cultivations {
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem 2rem 0 0;
+
+    .box-container {
+      align-items: center;
+      width: 100%;
+
+      h2,
+      p {
+        text-align: center;
+      }
+    }
+  }
+
+  .btn-container {
+    margin-top: 1rem;
+    ;
+  }
+
+  /* Main footer */
+  .footer-nav {
+    display: none;
+  }
+
+  .footer-left {
+    padding: 2rem;
+  }
+}
+
+/* Previous-cultivations */
+.main-cultivations {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+.previous-cultivations {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 200px;
+  background-color: var(--clr-primary-light-1);
+  margin-bottom: 2rem;
+}
+
+.cultivations-container {
+  display: flex;
+  justify-content: center;
+  width: 180px;
+  height: 180px;
+  padding: 2.9rem;
+  background-color: var(--clr-green-400);
+  border-radius: 25rem;
+  text-align: right;
+
+  .planting-container {
+    margin: 2rem;
+    text-align: right;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.box-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-self: flex-start;
+  width: 80%;
+
+  h2 {
+    text-align: start;
+    padding: 1rem 0;
+  }
+
+  p {
+    text-align: start;
+  }
+
+  .btn-container {
+    display: flex;
+    align-self: flex-end;
 
 
+    .btn-planted-seedings {
+      border: none;
+      background-color: var(--clr-green-400);
+      color: white;
+      padding: 10px 20px;
+      margin-left: 10px;
+      border-radius: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
 
+      &:hover,
+      &:focus-visible {
+        background-color: var(--clr-green-hover);
+        box-shadow: var(--border-shadow);
+        transform: scale(1.01);
+        transition: all 0.3s ease-in;
+        text-decoration: none;
+
+      }
+    }
+  }
+}
+
+/* footer */
+
+footer.footer-main {
+  background-color: var(--clr-green-400);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 3rem;
+
+  .footer-left {
+    max-width: 400px;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .logo-footer-container {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    margin-top: 3rem;
+  }
+
+  span,
+  p {
+    color: var(--clr-neutral-100);
+  }
+
+  .icon-telephone {
+    display: flex;
+    gap: .4rem;
+
+    img {
+      width: 15px;
+      height: 15px;
+      object-fit: contain;
+      margin-top: 0.3rem;
+    }
+  }
+}
+
+nav.footer-nav {
+  background-color: var(--clr-green-400);
+  margin-top: 1.5rem;
+}
+
+.footer-nav ul {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: .9rem;
+}
+
+.footer-nav>ul>li {
+  list-style: none;
+}
+
+.footer-nav>ul>li>a {
+  text-transform: none;
+  color: var(--clr-neutral-100)
+}
+
+.footer-nav>ul>li>a:hover {
+  text-decoration: underline;
+}
