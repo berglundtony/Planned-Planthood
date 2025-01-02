@@ -182,6 +182,7 @@ h3 {
 a {
   text-decoration: none;
   color: var(--clr-accent);
+  font-weight: var(--fw-semi-bold) ;
   text-transform: uppercase;
 
 
@@ -205,7 +206,7 @@ body {
   gap: 1rem;
 }
 
--------------------------------------------------------------Header/Navigation------------------------------------------------------------
+/*-------------------------------------------------------------Header/Navigation------------------------------------------------------------*/
 /* Logotype */
 
 .logo-container {
@@ -228,6 +229,11 @@ body {
   display: flex;
   flex-direction: column;
   text-align: left;
+
+  span{
+    line-height: 1;
+    font-size: var(--fs-400);
+  }
 }
 
 /* Navigation */
@@ -761,12 +767,12 @@ nav {
 
 /*-------------------------------------------------------------Main/Plantlist------------------------------------------------------------*/
 
-.plant-list {
+ .plant-list {
   display: grid;
   gap: 1.2rem;
   padding: 1.5rem 2rem;
 
-  .plant-info>p {
+  .plant-info > p {
     height: auto;
     display: flex;
     align-items: start;
@@ -789,7 +795,6 @@ nav {
       height: 220px;
       overflow: hidden;
 
-
       img.plant-image {
         width: 100%;
         height: 100%;
@@ -810,7 +815,7 @@ nav {
       justify-content: flex-start;
       flex-wrap: wrap;
       gap: .3rem;
-      margin: 0.3rem 0;
+      margin: 0.5rem 0;
     }
 
     .btn {
@@ -1114,7 +1119,7 @@ nav {
       width: 100%;
       height: auto;
       border: 10px solid var(--clr-neutral-100);
-      min-height: 490px;
+      min-height: 510px;
     }
 
     .plant-image-container {
@@ -1173,8 +1178,8 @@ nav {
 .cultivations-container {
   display: flex;
   justify-content: center;
-  width: 180px;
-  height: 180px;
+  width: 185px;
+  height: 185px;
   padding: 2.9rem;
   background-color: var(--clr-green-400);
   border-radius: 25rem;
@@ -1239,6 +1244,21 @@ nav {
 
 /* Mobile previous cultivations */
 @media (max-width: 576px) {
+  .cultivations-container {
+    margin-top: 3rem;
+
+    .planting-container {
+
+      text-align: right;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
   .main-cultivations {
     flex-direction: column;
     justify-content: center;
@@ -1251,13 +1271,13 @@ nav {
       h2,
       p {
         text-align: center;
+        padding: 0;
       }
     }
   }
 
   .btn-container {
     margin-top: 1rem;
-    ;
   }
 }
 
@@ -1278,6 +1298,10 @@ nav {
       }
     }
   }
+
+  .btn-container {
+    margin-top: 1rem;
+  }
 }
 
 /*-------------------------------------------------------------Footer------------------------------------------------------------ */
@@ -1285,10 +1309,10 @@ nav {
 .footer-main {
   background-color: var(--clr-green-400);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: flex-start;
   gap: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 
   .footer-left {
     max-width: 400px;
@@ -1309,15 +1333,21 @@ nav {
     color: var(--clr-neutral-100);
   }
 
-  .icon-telephone {
+  .icon-telephone, .icon-email {
     display: flex;
     gap: .4rem;
 
     img {
+      display: inline-block;
       width: 15px;
       height: 15px;
       object-fit: contain;
       margin-top: 0.3rem;
+    }
+    a{
+      color: var(--clr-neutral-100);
+      text-transform: lowercase;
+
     }
   }
 }
@@ -1325,7 +1355,7 @@ nav {
 /* Footer navigation */
 .footer-nav {
   background-color: var(--clr-green-400);
-  margin-top: 3rem;
+  margin-top: 3.5rem;
 
   ul {
     padding: 0;
@@ -1334,12 +1364,13 @@ nav {
     gap: .9rem;
   }
 
-  ul > li {
+  ul>li {
     list-style: none;
 
     a {
       text-transform: none;
       color: var(--clr-neutral-100);
+      font-weight: var(--fw-semi-bold);
     }
 
     &:hover {
@@ -1348,31 +1379,31 @@ nav {
   }
 }
 
-  /* Mobile Footer */
-  @media (max-width: 576px) {
-    .footer-nav {
-      display: none;
-    }
+/* Mobile Footer */
+@media (max-width: 576px) {
+  .footer-nav {
+    display: none;
+  }
+}
+
+/* Tablet Footer */
+@media (min-width: 577px) and (max-width: 824px) {
+  .footer-main {
+    flex-direction: column;
+    align-items: start;
   }
 
-  /* Tablet Footer */
-  @media (min-width: 577px) and (max-width: 824px) {
-    .footer-main {
-      flex-direction: column;
-      align-items: start;
-    }
-
-    .footer-left {
-      padding: 0 0 2rem 1rem;
-    }
-
-    nav.footer-nav {
-      display: none;
-    }
+  .footer-left {
+    padding: 0 0 2rem 1rem;
   }
 
-  /* Large Screen Footer */
-  /* @media (min-width: 825px) {
+  nav.footer-nav {
+    display: none;
+  }
+}
+
+/* Large Screen Footer */
+/* @media (min-width: 825px) {
     .footer-nav {
         display: none;
       }

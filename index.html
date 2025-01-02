@@ -33,8 +33,8 @@
     </nav>
   </Header>
   <main class="container">
-    <section class="hero">
-      <h2>Uppskattade växter</h2>
+    <section class="hero" area-labelledby="hero-section">
+      <h2 id="hero-section">Uppskattade växter</h2>
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, corporis ipsum.</p>
       <div class="image-container">
         <div class="item crop-container-dandelion">
@@ -357,13 +357,13 @@
       </article>
     </section>
 
-    <section class="previous-cultivations">
+    <section class="previous-cultivations" aria-labelledby="cultivations-section">
       <div class="main-cultivations">
-        <div class="cultivations-container">
-          <img src="Assets/images/icon-seedling.svg" alt="Fröplanta stor ikon" id="cultivations">
-        </div>
+        <figure class="cultivations-container">
+          <img src="Assets/images/icon-seedling.svg" alt="Fröplanta stor ikon">
+        </figure>
         <div class="box-container">
-          <h2>Våra tidigare odlingar</h2>
+          <h2 id="cultivations-section">Våra tidigare odlingar</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ratione quia eos pariatur deserunt
             veritatis. Tenetur, ipsum! Iusto delectus ipsam esse pariatur rerum eveniet nostrum, dolor distinctio nam
             quaerat doloribus?</p>
@@ -375,28 +375,32 @@
     </section>
   </main>
   <footer class="footer-main">
-      <div class="footer-left">
-        <div class="logo-footer-container">
-          <img src="Assets/images/logo-white.svg" id="logo" alt="Logotyp">
-          <div class="logo-text">
-            <span>Planned </span>
-            <span>Planthood</span>
-          </div>
+    <section class="footer-left">
+      <div class="logo-footer-container">
+        <img src="Assets/images/logo-white.svg" id="logo" alt="Planned Planthood logotyp">
+        <div class="logo-text">
+          <span>Planned </span>
+          <span>Planthood</span>
         </div>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, veniam ducimus aut sint atque ullam alias
-          perspiciatis fuga. Consequuntur nesciunt ea corrupti aperiam fugit inventore ratione earum. Iure, eius
-          molestias?</p>
-        <p class="icon-telephone"><img src="Assets/images/icon-phone.svg" alt="telefon symbol">Telefon: 020-1234567</p>
-        <p class="icon-telephone"><img src="Assets/images/icon-email.svg" alt="email symbol">@plannedplant.com</p>
       </div>
-      <nav class="footer-nav">
-        <ul>
-          <li><a href="#">Hem</a></li>
-          <li><a href="#">Historik</a></li>
-          <li><a href="#">Tips</a></li>
-          <li><a href="#">Kontakt</a></li>
-        </ul>
-      </nav>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, veniam ducimus aut sint atque ullam alias
+        perspiciatis fuga. Consequuntur nesciunt ea corrupti aperiam fugit inventore ratione earum. Iure, eius
+        molestias?</p>
+      <address>
+        <p class="icon-telephone"><img src="Assets/images/icon-phone.svg" alt="telefon symbol">Telefon:<a
+            href="tel:0201234567">020-1234567</a> </p>
+        <p class="icon-email"><img src="Assets/images/icon-email.svg" alt="email symbol">Email<a
+            href="mailto:info@plannedplant.com">info@plannedplant.com</p>
+      </address>
+    </section>
+    <nav class="footer-nav" aria-label="Sidfotens navigering">
+      <ul>
+        <li><a href="#">Hem</a></li>
+        <li><a href="#">Historik</a></li>
+        <li><a href="#">Tips</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </nav>
   </footer>
   <script>
     // Logotype
