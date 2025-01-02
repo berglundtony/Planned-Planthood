@@ -14,10 +14,10 @@
     <nav>
       <div class="logo-container">
         <img src="Assets/images/logo.svg" id="logo">
-        <div class="logo-text">
+        <h1 class="logo-text">
           <span>Planned </span>
           <span>Planthood</span>
-        </div>
+        </h1>
       </div>
       <button class="menu-icon" aria-label="Toggle menu">
         <span></span>
@@ -25,10 +25,10 @@
         <span></span>
       </button>
       <ul class="nav-links" id="menu">
-        <li><a href="#home">Hem</a></li>
-        <li><a href="#history">Historik</a></li>
-        <li><a href="#tips">Tips</a></li>
-        <li><a href="#contact">Kontakt</a></li>
+        <li><a href="#">Hem</a></li>
+        <li><a href="#">Historik</a></li>
+        <li><a href="#">Tips</a></li>
+        <li><a href="#">Kontakt</a></li>
       </ul>
     </nav>
   </Header>
@@ -38,19 +38,19 @@
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, corporis ipsum.</p>
       <div class="image-container">
         <div class="item crop-container-dandelion">
-          <img src="https://picsum.photos/id/239/1739/1391" alt="Maskros" />
+          <img src="https://picsum.photos/id/239/1739/1391" alt="Maskros med frön" />
         </div>
         <div class="item crop-container-rasberry">
-          <img src="https://picsum.photos/id/102/4320/3240" alt="Hallon" />
+          <img src="https://picsum.photos/id/102/4320/3240" alt="Hallon på ett räcke" />
         </div>
         <div class="item crop-container-cactus">
-          <img src="https://picsum.photos/id/248/3872/2592" alt="Kaktus" />
+          <img src="https://picsum.photos/id/248/3872/2592" alt="Kaktus i kruka" />
         </div>
         <div class="item crop-container-cactuses-outside">
           <img src="https://picsum.photos/id/789/5000/3338" alt="Kaktusar utomhus" />
         </div>
         <div class="item crop-container-steven-spassov">
-          <img src="https://picsum.photos/id/152/3888/2592" alt="Blomma" />
+          <img src="https://picsum.photos/id/152/3888/2592" alt="Blå lila blomma" />
         </div>
         <div class="item crop-container-flower">
           <img src="https://picsum.photos/id/360/1925/1280" alt="Blomma med nectar" />
@@ -60,13 +60,15 @@
     <section class="newsletter-notification">
       <div class="main-container">
         <div class="planting-container">
-          <img src="Assets/images/icon-planting.svg" id="email">
+          <img src="Assets/images/icon-planting.svg" alt="Plantering" class="planting-icon">
         </div>
         <div class="submit-container">
           <h2>Anmäl dig till vårt nyhetsbrev så du inte missar en utsådd!</h2>
           <form action="submit">
             <div class="input-container">
-              <input type="email" placeholder="email@domain.com" class="input-field" />
+              <label for="email" class="visually-hidden">E-postadress</label>
+              <input type="email" id="email" name="email" placeholder="email@domain.com" class="input-field"
+                aria-required="true" />
               <button type="submit" class="btn submit-btn">Skicka</button>
             </div>
           </form>
@@ -77,19 +79,20 @@
       <article>
         <div class="plant-info">
           <div class="plant-image-container">
-            <img src="https://picsum.photos/id/62/2000/1333" alt="Gurka" class="plant-image">
-            <img src="Assets/images/icon-seedling-2.svg" class="overlay-svg">
+            <img src="https://picsum.photos/id/62/2000/1333" alt="Landskapsbild som symboliserar gurkplantage"
+              class="plant-image">
+            <img src="Assets/images/icon-seedling-2.svg" class="overlay-svg" alt="Fröplanta ikon" aria-hidden="true">
           </div>
           <div class="plant-categories">
-            <a href="#" class="btn btn-category-flowers">Blommor</a>
-            <a href="#" class="btn btn-category-edible">Ätbart</a>
-            <a href="#" class="btn btn-category-greenery">Grönska</a>
+            <a href="#" class="btn btn-category-flowers" aria-label="Visa kategorin Blommor">Blommor</a>
+            <a href="#" class="btn btn-category-edible" aria-label="Visa kategorin Ätbart">Ätbart</a>
+            <a href="#" class="btn btn-category-greenery" aria-label="Visa kategorin Grönska">Grönska</a>
           </div>
           <h3>Gurka</h3>
           <p>Gurka växer snabbt, är enkel att odla och ger mängder med gurkor, bara man är noga med vattning,
             omplantering, duschning och gödsling.</p>
           <footer class="avatar">
-            <img src="https://avatar.iran.liara.run/public/45" alt=" Coolio" class="avatar-image">
+            <img src="https://avatar.iran.liara.run/public/45" alt="Avatar Coolio" class="avatar-image">
             <div class="avatar-info">
               <p class="avatar-name">Coolio</p>
               <p class="avatar-date">2024-04-01</p>
@@ -101,18 +104,18 @@
       <article>
         <div class="plant-info">
           <div class="plant-image-container">
-            <img src="https://picsum.photos/id/118/1500/1000" alt="Tomat" class="plant-image">
-            <img src="Assets/images/icon-seedling-2.svg" class="overlay-svg">
+            <img src="https://picsum.photos/id/118/1500/1000" alt="Bild över tomat fält" class="plant-image">
+            <img src="Assets/images/icon-seedling-2.svg" alt="Fröplanta ikon" class="overlay-svg">
           </div>
           <div class="plant-categories">
-            <a href="#" class="btn btn-category-sun-loving">Solälskande</a>
-            <a href="#" class="btn btn-category-easy-to-grow">Lättodlat</a>
-            <a href="#" class="btn btn-category-edible">Ätbart</a>
+            <a href="#" class="btn btn-category-sun-loving" aria-label="Visa kategorin Solälskande">Solälskande</a>
+            <a href="#" class="btn btn-category-easy-to-grow" aria-label="Visa kategorin Lättodlat">Lättodlat</a>
+            <a href="#" class="btn btn-category-edible" aria-label="Visa kategorin Ätbart">Ätbart</a>
           </div>
           <h3>Tomat</h3>
           <p>En perfekt grönsak att odla på balkongen eller i trädgården. Ger riklig skörd under sommaren.</p>
           <footer class="avatar">
-            <img src="https://avatar.iran.liara.run/public/30" alt=" Anna Odlare" class="avatar-image">
+            <img src="https://avatar.iran.liara.run/public/30" alt="Avatar Anna Odlare" class="avatar-image">
             <div class="avatar-info">
               <p class="avatar-name">Anna Odlare</p>
               <p class="avatar-date">2024-12-05</p>
@@ -125,18 +128,18 @@
         <div class="plant-info">
           <div class="plant-image-container">
             <img src="https://picsum.photos/id/228/4608/3456" alt="Pelergon" class="plant-image">
-            <img src="Assets/images/icon-seedling-2.svg" class="overlay-svg">
+            <img src="Assets/images/icon-seedling-2.svg" alt="Fröplanta ikon" class="overlay-svg">
           </div>
           <div class="plant-categories">
-            <a href="#" class="btn btn-category-decorative">Dekorativ</a>
-            <a href="#" class="btn btn-category-colorful">Färgstark</a>
-            <a href="#" class="btn btn-category-robust">Tålig</a>
-            <a href="#" class="btn btn-category-flowers">Blommor</a>
+            <a href="#" class="btn btn-category-decorative" aria-label="Visa kategorin Dekorativ">Dekorativ</a>
+            <a href="#" class="btn btn-category-colorful" aria-label="Visa kategorin Färgstark">Färgstark</a>
+            <a href="#" class="btn btn-category-robust" aria-label="Visa kategorin Tålig">Tålig</a>
+            <a href="#" class="btn btn-category-flowers" aria-label="Visa kategorin Blommor">Blommor</a>
           </div>
           <h3>Pelargon</h3>
           <p>En vacker och lättskött blomma som trivs både inne och ute under sommaren.</p>
           <footer class="avatar">
-            <img src="https://avatar.iran.liara.run/public/42" alt=" Blomsterkalle" class="avatar-image" />
+            <img src="https://avatar.iran.liara.run/public/42" alt="Avatar Blomsterkalle" class="avatar-image" />
             <div class="avatar-info">
               <p class="avatar-name">Blomsterkalle</p>
               <p class="avatar-date">2024-12-03</p>
@@ -149,17 +152,17 @@
         <div class="plant-info">
           <div class="plant-image-container">
             <img src="https://picsum.photos/id/254/4272/2848" alt="Basilika" class="plant-image">
-            <img src="Assets/images/icon-seedling-2.svg" class="overlay-svg">
+            <img src="Assets/images/icon-seedling-2.svg" alt="Fröplanta ikon" class="overlay-svg">
           </div>
           <div class="plant-categories">
-            <a href="#" class="btn btn-category-spices">Kryddor</a>
-            <a href="#" class="btn btn-category-fragrant">Doftande</a>
-            <a href="#" class="btn btn-category-sun-loving">Solälskande</a>
+            <a href="#" class="btn btn-category-air" aria-label="Visa kategorin Kryddor">Kryddor</a>
+            <a href="#" class="btn btn-category-fragrant" aria-label="Visa kategorin Doftande">Doftande</a>
+            <a href="#" class="btn btn-category-sun-loving" aria-label="Visa kategorin Solälskande">Solälskande</a>
           </div>
           <h3>Basilika</h3>
           <p>En fantastisk krydda för pastarätter och sallader. Trivs bäst i ett soligt fönster.</p>
           <footer class="avatar">
-            <img src="https://avatar.iran.liara.run/public/54" alt=" Krydd-Malin" class="avatar-image">
+            <img src="https://avatar.iran.liara.run/public/54" alt="Avatar Krydd-Malin" class="avatar-image">
             <div class="avatar-info">
               <p class="avatar-name">Krydd-Malin</p>
               <p class="avatar-date">2024-12-07</p>
@@ -171,17 +174,17 @@
         <div class="plant-info">
           <div class="plant-image-container">
             <img src="https://picsum.photos/id/631/2513/1670" alt="Sallad" class="plant-image">
-            <img src="Assets/images/icon-seedling-2.svg" class="overlay-svg">
+            <img src="Assets/images/icon-seedling-2.svg" alt="Fröplanta ikon" class="overlay-svg">
           </div>
           <div class="plant-categories">
-            <a href="#" class="btn btn-category-fast-growing">Snabbväxande</a>
-            <a href="#" class="btn btn-category-edible">Ätbart</a>
-            <a href="#" class="btn btn-category-greenery">Grönska</a>
+            <a href="#" class="btn btn-category-fast-growing" aria-label="Visa kategorin Snabbväxande">Snabbväxande</a>
+            <a href="#" class="btn btn-category-edible" aria-label="Visa kategorin Ätbart">Ätbart</a>
+            <a href="#" class="btn btn-category-greenery" aria-label="Visa kategorin Grönska">Grönska</a>
           </div>
           <h3>Sallad</h3>
           <p>Sallad är en av de enklaste grönsakerna att odla och ger snabba resultat för färska måltider.</p>
           <footer class="avatar">
-            <img src="https://avatar.iran.liara.run/public/13" alt=" grönis" class="avatar-image" />
+            <img src="https://avatar.iran.liara.run/public/13" alt="Avatar grönis" class="avatar-image" />
             <div class="avatar-info">
               <p class="avatar-name">Grönis</p>
               <p class="avatar-date">2024-12-06</p>
@@ -194,17 +197,17 @@
         <div class="plant-info">
           <div class="plant-image-container">
             <img src="https://picsum.photos/id/324/3888/2592" alt="Ormbunke" class="plant-image">
-            <img src="Assets/images/icon-seedling-2.svg" class="overlay-svg">
+            <img src="Assets/images/icon-seedling-2.svg" alt="Fröplanta ikon" class="overlay-svg">
           </div>
           <div class="plant-categories">
-            <a href="#" class="btn btn-category-sun-loving">Solälskande</a>
-            <a href="#" class="btn btn-category-greenery">Grönska</a>
-            <a href="#" class="btn btn-category-decorative">Dekorativ</a>
+            <a href="#" class="btn btn-category-sun-loving" aria-label="Visa kategorin Solälskande">Solälskande</a>
+            <a href="#" class="btn btn-category-greenery" aria-label="Visa kategorin Grönska">Grönska</a>
+            <a href="#" class="btn btn-category-decorative" aria-label="Visa kategorin Dekorativ">Dekorativ</a>
           </div>
           <h3>Ormbunke</h3>
           <p>En klassisk växt som passar perfekt i badrummet eller på skuggiga platser.</p>
           <footer class="avatar">
-            <img src="https://avatar.iran.liara.run/public/11" alt=" naturvännen" class="avatar-image">
+            <img src="https://avatar.iran.liara.run/public/11" alt="Avatar Naturvännen" class="avatar-image">
             <div class="avatar-info">
               <p class="avatar-name">Naturvännen</p>
               <p class="avatar-date">2024-12-08</p>
@@ -217,19 +220,19 @@
         <div class="plant-info">
           <div class="plant-image-container">
             <img src="https://picsum.photos/id/339/4752/3168" alt="Gurka" class="plant-image">
-            <img src="Assets/images/icon-seedling-2.svg" class="overlay-svg">
+            <img src="Assets/images/icon-seedling-2.svg" alt="Fröplanta ikon" class="overlay-svg">
           </div>
           <div class="plant-categories">
-            <a href="#" class="btn btn-category-flowers">Blommor</a>
-            <a href="#" class="btn btn-category-edible">Ätbart</a>
-            <a href="#" class="btn btn-category-greenery">Grönska</a>
+            <a href="#" class="btn btn-category-flowers" aria-label="Visa kategorin Blommor">Blommor</a>
+            <a href="#" class="btn btn-category-edible" aria-label="Visa kategorin Ätbart">Ätbart</a>
+            <a href="#" class="btn btn-category-greenery" aria-label="Visa kategorin Grönska">Grönska</a>
           </div>
           <h3>Gurka</h3>
           <p>Gurka växer snabbt, är enkel att odla och ger mängder med gurkor, bara man är noga med vattning,
             omplantering,
             duschning och gödsling.</p>
           <footer class="avatar">
-            <img src="https://avatar.iran.liara.run/public/45" alt=" Coolio" class="avatar-image">
+            <img src="https://avatar.iran.liara.run/public/45" alt="Avatar Coolio" class="avatar-image">
             <div class="avatar-info">
               <p class="avatar-name">Coolio</p>
               <p class="avatar-date">2024-04-01</p>
@@ -242,17 +245,17 @@
         <div class="plant-info">
           <div class="plant-image-container">
             <img src="https://picsum.photos/id/923/4616/1699" alt="Tomat" class="plant-image">
-            <img src="Assets/images/icon-seedling-2.svg" class="overlay-svg">
+            <img src="Assets/images/icon-seedling-2.svg" alt="Fröplanta ikon" class="overlay-svg">
           </div>
           <div class="plant-categories">
-            <a href="#" class="btn btn-category-sun-loving">Solälskande</a>
-            <a href="#" class="btn btn-category-easy-to-grow">Lättodlat</a>
-            <a href="#" class="btn btn-category-edible">Ätbart</a>
+            <a href="#" class="btn btn-category-sun-loving" aria-label="Visa kategorin Solälskande">Solälskande</a>
+            <a href="#" class="btn btn-category-easy-to-grow" aria-label="Visa kategorin Lättodlat">Lättodlat</a>
+            <a href="#" class="btn btn-category-edible" aria-label="Visa kategorin Ätbart">Ätbart</a>
           </div>
           <h3>Tomat</h3>
           <p>En perfekt grönsak att odla på balkongen eller i trädgården. Ger riklig skörd under sommaren.</p>
           <footer class="avatar">
-            <img src="https://avatar.iran.liara.run/public/30" alt=" Anna Odlare" class="avatar-image" />
+            <img src="https://avatar.iran.liara.run/public/30" alt="Avatar Anna Odlare" class="avatar-image" />
             <div class="avatar-info">
               <p class="avatar-name">Anna Odlare</p>
               <p class="avatar-date">2024-12-05</p>
@@ -265,18 +268,18 @@
         <div class="plant-info">
           <div class="plant-image-container">
             <img src="https://picsum.photos/id/944/5000/3333" alt="Pelergon" class="plant-image">
-            <img src="Assets/images/icon-seedling-2.svg" class="overlay-svg">
+            <img src="Assets/images/icon-seedling-2.svg" alt="Fröplanta ikon" class="overlay-svg">
           </div>
           <div class="plant-categories">
-            <a href="#" class="btn btn-category-decorative">Dekorativ</a>
-            <a href="#" class="btn btn-category-colorful">Färgstark</a>
-            <a href="#" class="btn btn-category-robust">Tålig</a>
-            <a href="#" class="btn btn-category-flowers">Blommor</a>
+            <a href="#" class="btn btn-category-decorative" aria-label="Visa kategorin Dekorativ">Dekorativ</a>
+            <a href="#" class="btn btn-category-colorful" aria-label="Visa kategorin Färgstark">Färgstark</a>
+            <a href="#" class="btn btn-category-robust" aria-label="Visa kategorin Tålig">Tålig</a>
+            <a href="#" class="btn btn-category-flowers" aria-label="Visa kategorin Blommor">Blommor</a>
           </div>
           <h3>Pelargon</h3>
           <p>En vacker och lättskött blomma som trivs både inne och ute under sommaren.</p>
           <footer class="avatar">
-            <img src="https://avatar.iran.liara.run/public/42" alt=" Blomsterkalle" class="avatar-image">
+            <img src="https://avatar.iran.liara.run/public/42" alt="Avatar Blomsterkalle" class="avatar-image">
             <div class="avatar-info">
               <p class="avatar-name">Blomsterkalle</p>
               <p class="avatar-date">2024-12-03</p>
@@ -289,17 +292,17 @@
         <div class="plant-info">
           <div class="plant-image-container">
             <img src="https://picsum.photos/id/943/3000/2002" alt="Basilika" class="plant-image">
-            <img src="Assets/images/icon-seedling-2.svg" class="overlay-svg">
+            <img src="Assets/images/icon-seedling-2.svg" alt="Fröplanta ikon" class="overlay-svg">
           </div>
           <div class="plant-categories">
-            <a href="#" class="btn btn-category-spices">Kryddor</a>
-            <a href="#" class="btn btn-category-fragrant">Doftande</a>
-            <a href="#" class="btn btn-category-sun-loving">Solälskande</a>
+            <a href="#" class="btn btn-category-air" aria-label="Visa kategorin Kryddor">Kryddor</a>
+            <a href="#" class="btn btn-category-fragrant" aria-label="Visa kategorin Doftande">Doftande</a>
+            <a href="#" class="btn btn-category-sun-loving" aria-label="Visa kategorin Solälskande">Solälskande</a>
           </div>
           <h3>Basilika</h3>
           <p>En fantastisk krydda för pastarätter och sallader. Trivs bäst i ett soligt fönster.</p>
           <footer class="avatar">
-            <img src="https://avatar.iran.liara.run/public/99" alt="Krydd-Malin" class="avatar-image" />
+            <img src="https://avatar.iran.liara.run/public/99" alt="Avatar Krydd-Malin" class="avatar-image" />
             <div class="avatar-info">
               <p class="avatar-name">Krydd-Malin</p>
               <p class="avatar-date">2024-12-07</p>
@@ -311,17 +314,17 @@
         <div class="plant-info">
           <div class="plant-image-container">
             <img src="https://picsum.photos/id/955/3872/2592" alt="Sallad" class="plant-image">
-            <img src="Assets/images/icon-seedling-2.svg" class="overlay-svg">
+            <img src="Assets/images/icon-seedling-2.svg" alt="Fröplanta ikon" class="overlay-svg">
           </div>
           <div class="plant-categories">
-            <a href="#" class="btn btn-category-fast-growing">Snabbväxande</a>
-            <a href="#" class="btn btn-category-edible">Ätbart</a>
-            <a href="#" class="btn btn-category-greenery">Grönska</a>
+            <a href="#" class="btn btn-category-fast-growing" aria-label="Visa kategorin Snabbväxande">Snabbväxande</a>
+            <a href="#" class="btn btn-category-edible" aria-label="Visa kategorin Ätbart">Ätbart</a>
+            <a href="#" class="btn btn-category-greenery" aria-label="Visa kategorin Grönska">Grönska</a>
           </div>
           <h3>Sallad</h3>
           <p>Sallad är en av de enklaste grönsakerna att odla och ger snabba resultat för färska måltider.</p>
           <footer class="avatar">
-            <img src="https://avatar.iran.liara.run/public/13" alt=" grönis" class="avatar-image" />
+            <img src="https://avatar.iran.liara.run/public/13" alt="Avatar grönis" class="avatar-image" />
             <div class="-info">
               <p class="-name">Grönis</p>
               <p class="-date">2024-12-06</p>
@@ -334,17 +337,17 @@
         <div class="plant-info">
           <div class="plant-image-container">
             <img src="https://picsum.photos/id/958/5000/3333" alt="Ormbunke" class="plant-image">
-            <img src="Assets/images/icon-seedling-2.svg" class="overlay-svg">
+            <img src="Assets/images/icon-seedling-2.svg" alt="Fröplanta ikon" class="overlay-svg">
           </div>
           <div class="plant-categories">
-            <a href="#" class="btn btn-category-sun-loving">Solälskande</a>
-            <a href="#" class="btn btn-category-greenery">Grönska</a>
-            <a href="#" class="btn btn-category-decorative">Dekorativ</a>
+            <a href="#" class="btn btn-category-sun-loving" aria-label="Visa kategorin Solälskande">Solälskande</a>
+            <a href="#" class="btn btn-category-greenery" aria-label="Visa kategorin Grönska">Grönska</a>
+            <a href="#" class="btn btn-category-decorative" aria-label="Visa kategorin Dekorativ">Dekorativ</a>
           </div>
           <h3>Ormbunke</h3>
           <p>En klassisk växt som passar perfekt i badrummet eller på skuggiga platser.</p>
           <footer class="avatar">
-            <img src="https://avatar.iran.liara.run/public/11" alt=" naturvännen" class="avatar-image" />
+            <img src="https://avatar.iran.liara.run/public/11" alt="Avatar naturvännen" class="avatar-image" />
             <div class="avatar-info">
               <p class="avatar-name">Naturvännen</p>
               <p class="avatar-date">2024-12-08</p>
@@ -357,7 +360,7 @@
     <section class="previous-cultivations">
       <div class="main-cultivations">
         <div class="cultivations-container">
-          <img src="Assets/images/icon-seedling.svg" id="cultivations">
+          <img src="Assets/images/icon-seedling.svg" alt="Fröplanta stor ikon" id="cultivations">
         </div>
         <div class="box-container">
           <h2>Våra tidigare odlingar</h2>
@@ -372,29 +375,28 @@
     </section>
   </main>
   <footer class="footer-main">
-        <div class="footer-left">
-            <div class="logo-footer-container">
-              <img src="Assets/images/logo-white.svg" id="logo">
-                <div class="logo-text">
-                  <span>Planned </span>
-                  <span>Planthood</span>
-                </div>
-            </div>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, veniam ducimus aut sint atque ullam alias
-              perspiciatis fuga. Consequuntur nesciunt ea corrupti aperiam fugit inventore ratione earum. Iure, eius
-              molestias?</p>
-            <p class="icon-telephone"><img src="Assets/images/icon-phone.svg">Telefon: 020-1234567</p>
-            <p class="icon-telephone"><img src="Assets/images/icon-email.svg">@plannedplant.com</p>
+      <div class="footer-left">
+        <div class="logo-footer-container">
+          <img src="Assets/images/logo-white.svg" id="logo" alt="Logotyp">
+          <div class="logo-text">
+            <span>Planned </span>
+            <span>Planthood</span>
+          </div>
         </div>
-        <nav class="footer-nav">
-          <ul>
-            <li><a href="#">Hem</a></li>
-            <li><a href="#">Historik</a></li>
-            <li><a href="#">Tips</a></li>
-            <li><a href="#">Kontakt</a></li>
-          </ul>
-        </nav>
-    </div>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, veniam ducimus aut sint atque ullam alias
+          perspiciatis fuga. Consequuntur nesciunt ea corrupti aperiam fugit inventore ratione earum. Iure, eius
+          molestias?</p>
+        <p class="icon-telephone"><img src="Assets/images/icon-phone.svg" alt="telefon symbol">Telefon: 020-1234567</p>
+        <p class="icon-telephone"><img src="Assets/images/icon-email.svg" alt="email symbol">@plannedplant.com</p>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="#">Hem</a></li>
+          <li><a href="#">Historik</a></li>
+          <li><a href="#">Tips</a></li>
+          <li><a href="#">Kontakt</a></li>
+        </ul>
+      </nav>
   </footer>
   <script>
     // Logotype

@@ -103,8 +103,6 @@ main {
   --clr-fragrant-hover: hsl(327, 51%, 47%, 0.8);
   --clr-fast: hsl(218, 11%, 34%);
   --clr-fast-hover: hsl(218, 11%, 34%, 0.8);
-  --clr-spices: hsl(120, 92%, 45%);
-  --clr-spices-hover: hsl(120, 92%, 45%, 0.8);
 
   --border-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
@@ -149,15 +147,16 @@ main {
   --max-image-height: 250px;
 }
 
-/* Utilities */
+/* Utilities from ChatGPT */
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
+  width: 1px;
   height: 1px;
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
-  width: 1px;
+  border: 0;
 }
 
 /* Composition */
@@ -206,6 +205,7 @@ body {
   gap: 1rem;
 }
 
+-------------------------------------------------------------Header/Navigation------------------------------------------------------------
 /* Logotype */
 
 .logo-container {
@@ -230,7 +230,7 @@ body {
   text-align: left;
 }
 
-/* navigation */
+/* Navigation */
 nav {
   display: flex;
   flex-flow: row nowrap;
@@ -263,9 +263,93 @@ nav {
   background-color: var(--clr-green-400);
 }
 
+/* Mobile Menu */
+@media (max-width: 576px) {
 
-/* hero */
+  nav {
+    justify-content: space-between;
+  }
 
+  .logo-container {
+    align-items: start;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--clr-primary-light-1);
+    position: absolute;
+    top: 100px;
+    right: 2px;
+    width: 150px;
+    border-radius: 5px;
+    gap: 0;
+
+    li {
+      margin: .3rem 1.8rem;
+      padding: .5rem;
+
+      a {
+        color: var(--clr-green-400);
+      }
+    }
+  }
+
+  .nav-links.active {
+    display: flex;
+    width: 100%
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+}
+
+/* Tablets Meny */
+@media (min-width: 577px) and (max-width: 824px) {
+
+  nav {
+    justify-content: space-between;
+  }
+
+  .logo-container {
+    align-items: start;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--clr-primary-light-1);
+    position: absolute;
+    top: 100px;
+    right: 2px;
+    border-radius: 5px;
+    gap: 0;
+
+    li {
+      margin: .3rem 3rem;
+      padding: .5rem;
+
+      a {
+        color: var(--clr-green-400);
+      }
+    }
+  }
+
+  .nav-links.active {
+    display: flex;
+    width: 100%
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+}
+
+/* -------------------------------------------------------------Main/Hero------------------------------------------------------------ */
+/* Hero */
 .hero {
   width: 100%;
   display: flex;
@@ -368,184 +452,9 @@ nav {
   object-fit: cover;
 }
 
-@media (min-width: 825) {
-  .main-container {
-    flex-direction: row-reverse;
-  }
-
-  .submit-container {
-    width: 35%;
-    text-align: start;
-  }
-
-  .input-container {
-    width: 100%;
-    margin: 1rem 2.5rem 0 0;
-  }
-
-
-}
-
-
-@media (min-width: 577px) and (max-width: 824px) {
-
-  nav {
-    justify-content: space-between;
-  }
-
-  .logo-container {
-    align-items: start;
-    gap: 1rem;
-  }
-
-  /* meny för surfplattor */
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: var(--clr-primary-light-1);
-    position: absolute;
-    top: 60px;
-    right: 2px;
-    border-radius: 5px;
-    gap: 0;
-
-    li {
-      margin: .3rem 3rem;
-      padding: .5rem;
-
-      a {
-        color: var(--clr-green-400);
-      }
-    }
-  }
-
-  .nav-links.active {
-    display: flex;
-    width: 100%
-  }
-
-  .menu-icon {
-    display: flex;
-  }
-
-
-  /* Container */
-
-  .image-container {
-    grid-template-columns: repeat(3, 1fr);
-    /* Tre kolumner istället för fyra */
-    grid-template-rows: auto;
-    /* Dynamiska rader */
-  }
-
-  .crop-container-dandelion {
-    grid-row: 1;
-    grid-column: 1;
-    max-height: var(--max-image-height);
-    min-width: var(--min-image-width);
-  }
-
-  .crop-container-rasberry {
-    grid-row: 1;
-    grid-column: 2;
-    width: 100%;
-    max-height: var(--max-image-height);
-    min-width: var(--min-image-width);
-  }
-
-  .crop-container-cactus {
-    grid-row: 1;
-    grid-column: 3;
-    width: 100%;
-    max-height: var(--max-image-height);
-    min-width: var(--min-image-width);
-  }
-
-  .crop-container-cactuses-outside {
-    grid-row: 2;
-    grid-column: 1;
-    width: 100%;
-    max-height: var(--max-image-height);
-    min-width: var(--min-image-width);
-  }
-
-  .crop-container-steven-spassov {
-    grid-row: 2;
-    grid-column: 2;
-    width: 100%;
-    max-height: var(--max-image-height);
-    min-width: var(--min-image-width);
-  }
-
-  .crop-container-flower {
-    grid-row: 2;
-    grid-column: 3;
-    width: 100%;
-    max-height: var(--max-image-height);
-    min-width: var(--min-image-width);
-  }
-
-
-
-  .main-container {
-    flex-direction: column;
-  }
-
-  .submit-container {
-    width: 55%;
-    text-align: start;
-    margin: 2rem;
-  }
-
-}
-
-
-/* Mobil */
+/* Mobile Hero */
 @media (max-width: 576px) {
 
-  /* mobile navigation */
-
-  nav {
-    justify-content: space-between;
-  }
-
-  .logo-container {
-    align-items: start;
-    gap: 1rem;
-  }
-
-  /* Meny för mobiler */
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: var(--clr-primary-light-1);
-    position: absolute;
-    top: 60px;
-    right: 2px;
-    width: 150px;
-    border-radius: 5px;
-    gap: 0;
-
-    li {
-      margin: .3rem 1.8rem;
-      padding: .5rem;
-
-      a {
-        color: var(--clr-green-400);
-      }
-    }
-  }
-
-  .nav-links.active {
-    display: flex;
-    width: 100%
-  }
-
-  .menu-icon {
-    display: flex;
-  }
-
-  /* Container */
   .container {
     margin: 0 0;
     display: flex;
@@ -554,31 +463,6 @@ nav {
     gap: 1rem;
   }
 
-  .main-container {
-    max-width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 1.9rem;
-  }
-
-  .submit-container {
-    width: 75%;
-    text-align: center;
-    margin: 1rem;
-
-    h2 {
-      text-align: center;
-    }
-
-    .input-container {
-      width: 90%;
-      margin: 1rem .5rem 0 .9rem;
-    }
-  }
-
-  /* Hero */
   .hero {
     width: 100%;
     display: flex;
@@ -655,19 +539,67 @@ nav {
     max-height: var(--max-image-height);
     min-width: var(--min-image-width);
   }
+}
 
-  .main-container {
-    flex-direction: column;
+/* Tablets  Hero */
+@media (min-width: 577px) and (max-width: 824px) {
+
+  .image-container {
+    grid-template-columns: repeat(3, 1fr);
+    /* Tre kolumner istället för fyra */
+    grid-template-rows: auto;
+    /* Dynamiska rader */
   }
 
-  .submit-container {
-    width: 95%;
-    margin: 4rem;
+  .crop-container-dandelion {
+    grid-row: 1;
+    grid-column: 1;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+
+  .crop-container-rasberry {
+    grid-row: 1;
+    grid-column: 2;
+    width: 100%;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+
+  .crop-container-cactus {
+    grid-row: 1;
+    grid-column: 3;
+    width: 100%;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+
+  .crop-container-cactuses-outside {
+    grid-row: 2;
+    grid-column: 1;
+    width: 100%;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+
+  .crop-container-steven-spassov {
+    grid-row: 2;
+    grid-column: 2;
+    width: 100%;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
+  }
+
+  .crop-container-flower {
+    grid-row: 2;
+    grid-column: 3;
+    width: 100%;
+    max-height: var(--max-image-height);
+    min-width: var(--min-image-width);
   }
 }
 
-
-/* newsletter */
+/*-------------------------------------------------------------Main/Newsletter------------------------------------------------------------*/
 
 .newsletter-notification {
   display: flex;
@@ -685,11 +617,12 @@ nav {
   align-items: center;
   text-align: center;
   padding: 1.9rem 0;
+  /* margin: 0 2rem; */
 }
 
 .planting-container {
-  width: 370px;
-  height: 200px;
+  width: 170px;
+  width: 200px;
   padding: 2.5rem 2.9rem 3.3rem 2.9rem;
   /* margin-left: 2rem; */
   background-color: var(--clr-green-400);
@@ -704,7 +637,6 @@ nav {
   }
 }
 
-
 .submit-container {
   margin: 2rem;
 
@@ -717,6 +649,7 @@ nav {
   .input-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     border: 2px solid var(--clr-primary-dark);
     border-radius: 1.5rem;
 
@@ -752,13 +685,86 @@ nav {
   }
 }
 
-/* Plantlist */
+/* Mobile Newsletter */
+@media (max-width: 576px) {
+  .main-container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 3rem .9rem;
+  }
+
+  .submit-container {
+    width: 100%;
+    text-align: center;
+    margin: .6rem 0;
+
+    h2 {
+      text-align: center;
+    }
+
+    .input-container {
+      width: 98%;
+      margin: 0 .6rem 0 .2rem;
+    }
+  }
+}
+
+/* Tablets Newsletter*/
+@media (min-width: 577px) and (max-width: 824px) {
+
+  .main-container {
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 4rem 0 0;
+  }
+
+  .planting-container {
+    width: 180px;
+    height: 180px;
+    padding: 2.5rem 2.9rem 3.3rem 2.9rem;
+    margin-left: 2rem;
+    background-color: var(--clr-green-400);
+    border-radius: 50%;
+    text-align: center;
+  }
+
+  .main-container {
+    flex-direction: column;
+  }
+
+  .submit-container {
+    width: 55%;
+    text-align: start;
+    margin: 2rem;
+  }
+}
+
+/*Large screens Newsletter */
+@media (min-width: 825px) {
+
+  .main-container {
+    flex-direction: row-reverse;
+  }
+
+  .submit-container {
+    width: 65%;
+    text-align: start;
+  }
+
+  .input-container {
+    width: 100%;
+    margin: 1rem 2.5rem 0 0;
+  }
+}
+
+/*-------------------------------------------------------------Main/Plantlist------------------------------------------------------------*/
 
 .plant-list {
   display: grid;
   gap: 1.2rem;
   padding: 1.5rem 2rem;
-  margin: 0 10rem;
 
   .plant-info>p {
     height: auto;
@@ -770,9 +776,9 @@ nav {
     display: flex;
     flex-direction: column;
     width: 230px;
-    height: 550px;
-    gap: .3rem;
-    padding: .6rem;
+    height: 545px;
+    gap: .4rem;
+    padding: .7rem;
     background-color: var(--clr-primary-light-1);
     border: 5px solid var(--clr-neutral-100);
     box-shadow: var(--border-shadow);
@@ -799,13 +805,12 @@ nav {
       }
     }
 
-
     .plant-categories {
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;
       gap: .3rem;
-      margin: 0.6rem 0;
+      margin: 0.3rem 0;
     }
 
     .btn {
@@ -813,7 +818,7 @@ nav {
       height: 25px;
       padding: 0 .8rem;
       font-size: var(--fs-100);
-      font-weight: var(--clr-primary);
+      font-weight: var(--fw-semi-bold);
       letter-spacing: 1px;
       display: flex;
       justify-content: center;
@@ -1003,14 +1008,14 @@ nav {
       }
     }
 
-    .btn-category-spices {
-      background-color: var(--clr-spices);
+    .btn-category-air {
+      background-color: var(--clr-air);
       color: var(--clr-neutral-100);
       transition: all 0.3s ease-out;
 
       &:hover,
       &:focus-visible {
-        background-color: var(--clr-spices-hover);
+        background-color: var(--clr-air-hover);
         box-shadow: var(--border-shadow);
         transform: scale(1.02);
         transition: all 0.3s ease-in;
@@ -1067,14 +1072,19 @@ nav {
   border: 1px solid var(--clr-primary-dark);
 }
 
-@media (min-width: 825px) {
-  .main-container {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
-
+/* Mobile Plantlist */
+@media (max-width: 576px) {
   .plant-list {
-    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    width: 100%;
+    gap: .9rem;
+    padding: 1.5rem 1rem;
+    margin: 0 2rem;
+
+    .plant-info {
+      width: 100%;
+      height: 480px;
+    }
 
     .plant-image-container {
       width: 80%;
@@ -1082,34 +1092,14 @@ nav {
 
       .overlay-svg {
         top: 30%;
-        left: 30%;
+        left: 35%;
       }
     }
   }
-
 }
 
+/* Tablets Plantlist */
 @media (min-width: 577px) and (max-width: 824px) {
-
-  /* Newsletter */
-
-  .main-container {
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 4rem 0 0;
-  }
-
-  .planting-container {
-    width: 180px;
-    height: 180px;
-    padding: 2.5rem 2.9rem 3.3rem 2.9rem;
-    margin-left: 2rem;
-    background-color: var(--clr-green-400);
-    border-radius: 50%;
-    text-align: center;
-  }
-
-  /* Plantlist tablet */
   .plant-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1137,52 +1127,18 @@ nav {
       }
     }
   }
-
-  /* Previous cultivations */
-  .main-cultivations {
-    flex-direction: column;
-    justify-content: center;
-    margin: 2rem 2rem 0 0;
-
-    .box-container {
-      align-items: center;
-      width: 100%;
-
-      h2,
-      p {
-        text-align: center;
-      }
-    }
-  }
-
-  .btn-container {
-    margin-top: 1rem;
-    ;
-  }
-
-  .footer-nav {
-    display: none;
-  }
 }
 
-@media (max-width: 576px) {
-  .planting-container {
-    width: 170px;
-    width: 200px;
+
+/* Large Screen Plantlist */
+@media (min-width: 825px) {
+  .main-container {
+    flex-direction: row-reverse;
+    justify-content: space-between;
   }
 
-  /* Plantlist mobile */
   .plant-list {
-    display: grid;
-    width: 100%;
-    gap: .9rem;
-    padding: 1.5rem 1rem;
-    margin: 0 2rem;
-
-    .plant-info {
-      width: 100%;
-      height: 480px;
-    }
+    grid-template-columns: repeat(4, 1fr);
 
     .plant-image-container {
       width: 80%;
@@ -1190,48 +1146,14 @@ nav {
 
       .overlay-svg {
         top: 30%;
-        left: 35%;
+        left: 30%;
       }
     }
-  }
-
-  .input-container {
-    width: 80%;
-  }
-
-  /* Previous cultivations */
-  .main-cultivations {
-    flex-direction: column;
-    justify-content: center;
-    margin: 2rem 2rem 0 0;
-
-    .box-container {
-      align-items: center;
-      width: 100%;
-
-      h2,
-      p {
-        text-align: center;
-      }
-    }
-  }
-
-  .btn-container {
-    margin-top: 1rem;
-    ;
-  }
-
-  /* Main footer */
-  .footer-nav {
-    display: none;
-  }
-
-  .footer-left {
-    padding: 2rem;
   }
 }
 
-/* Previous-cultivations */
+/*-------------------------------------------------------------Main/Previous-Cultivations------------------------------------------------------------ */
+
 .main-cultivations {
   display: flex;
   justify-content: space-evenly;
@@ -1315,7 +1237,54 @@ nav {
   }
 }
 
-/* footer */
+/* Mobile previous cultivations */
+@media (max-width: 576px) {
+  .main-cultivations {
+    flex-direction: column;
+    justify-content: center;
+
+    .box-container {
+      align-items: center;
+      width: 100%;
+      margin: 0 .9rem;
+
+      h2,
+      p {
+        text-align: center;
+      }
+    }
+  }
+
+  .btn-container {
+    margin-top: 1rem;
+    ;
+  }
+}
+
+/* Tablets Previous-cultivations */
+@media (min-width: 577px) and (max-width: 824px) {
+  .main-cultivations {
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem 2rem 0 0;
+
+    .box-container {
+      align-items: center;
+      width: 100%;
+
+      h2,
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
+/*-------------------------------------------------------------Footer------------------------------------------------------------ */
+
+.footer-left {
+  padding: .8rem;
+}
 
 footer.footer-main {
   background-color: var(--clr-green-400);
@@ -1356,27 +1325,53 @@ footer.footer-main {
   }
 }
 
-nav.footer-nav {
+/* Footer navigation */
+.footer-nav {
   background-color: var(--clr-green-400);
-  margin-top: 1.5rem;
-}
+  margin-top: 3rem;
 
-.footer-nav ul {
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: .9rem;
-}
+  ul {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: .9rem;
+  }
 
-.footer-nav>ul>li {
-  list-style: none;
-}
+  ul > li {
+    list-style: none;
 
-.footer-nav>ul>li>a {
-  text-transform: none;
-  color: var(--clr-neutral-100)
-}
+    a {
+      text-transform: none;
+      color: var(--clr-neutral-100);
+    }
 
-.footer-nav>ul>li>a:hover {
-  text-decoration: underline;
-}
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  /* Mobile Footer */
+  @media (max-width: 576px) {
+    .footer-nav {
+      display: none;
+    }
+  }
+
+  /* Tablet Footer */
+  @media (min-width: 577px) and (max-width: 824px) {
+    .footer-main {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-left {
+      padding: 0 0 2rem 1rem;
+    }
+
+    .footer-nav {
+      display: none;
+    }
+  }
+
+  /* Large Screen Footer */
+  /* @media (min-width: 825px) {} */
