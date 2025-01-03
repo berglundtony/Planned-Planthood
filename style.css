@@ -182,14 +182,18 @@ h3 {
 a {
   text-decoration: none;
   color: var(--clr-accent);
-  font-weight: var(--fw-semi-bold) ;
+  font-size: var(--fs-500);
+  font-weight: var(--fw-semi-bold);
   text-transform: uppercase;
-
 
   &:hover,
   &:focus-visible {
     color: var(--clr-primary-dark);
     text-decoration: underline;
+  }
+
+  &:active {
+    color: var(--clr-green-700);
   }
 }
 
@@ -222,17 +226,16 @@ body {
 }
 
 .logo-text {
-  font-size: var(--fs-400);
-  font-weight: var(--fw-semi-bold);
-  color: var(--clr-green-400);
-  text-transform: uppercase;
   display: flex;
   flex-direction: column;
   text-align: left;
 
-  span{
+  span {
     line-height: 1;
-    font-size: var(--fs-400);
+    font-size: var(--fs-500);
+    font-weight: var(--fw-semi-bold);
+    color: var(--clr-green-400);
+    text-transform: uppercase;
   }
 }
 
@@ -242,7 +245,7 @@ nav {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: .6rem;
   background-color: var(--clr-primary-light-1);
 }
 
@@ -286,7 +289,7 @@ nav {
     flex-direction: column;
     background-color: var(--clr-primary-light-1);
     position: absolute;
-    top: 100px;
+    top: 50px;
     right: 2px;
     width: 150px;
     border-radius: 5px;
@@ -313,7 +316,7 @@ nav {
 }
 
 /* Tablets Meny */
-@media (min-width: 577px) and (max-width: 824px) {
+@media (min-width: 577px) and (max-width: 1030px) {
 
   nav {
     justify-content: space-between;
@@ -329,7 +332,7 @@ nav {
     flex-direction: column;
     background-color: var(--clr-primary-light-1);
     position: absolute;
-    top: 100px;
+    top: 50px;
     right: 2px;
     border-radius: 5px;
     gap: 0;
@@ -548,7 +551,7 @@ nav {
 }
 
 /* Tablets  Hero */
-@media (min-width: 577px) and (max-width: 824px) {
+@media (min-width: 577px) and (max-width: 1030px) {
 
   .image-container {
     grid-template-columns: repeat(3, 1fr);
@@ -718,7 +721,7 @@ nav {
 }
 
 /* Tablets Newsletter*/
-@media (min-width: 577px) and (max-width: 824px) {
+@media (min-width: 577px) and (max-width: 1030px) {
 
   .main-container {
     flex-direction: column;
@@ -748,7 +751,7 @@ nav {
 }
 
 /*Large screens Newsletter */
-@media (min-width: 825px) {
+@media (min-width: 1031px) {
 
   .main-container {
     flex-direction: row-reverse;
@@ -767,12 +770,12 @@ nav {
 
 /*-------------------------------------------------------------Main/Plantlist------------------------------------------------------------*/
 
- .plant-list {
+.plant-list {
   display: grid;
   gap: 1.2rem;
   padding: 1.5rem 2rem;
 
-  .plant-info > p {
+  .plant-info>p {
     height: auto;
     display: flex;
     align-items: start;
@@ -815,7 +818,7 @@ nav {
       justify-content: flex-start;
       flex-wrap: wrap;
       gap: .3rem;
-      margin: 0.5rem 0;
+      margin: 0.4rem 0;
     }
 
     .btn {
@@ -1104,7 +1107,7 @@ nav {
 }
 
 /* Tablets Plantlist */
-@media (min-width: 577px) and (max-width: 824px) {
+@media (min-width: 577px) and (max-width: 1030px) {
   .plant-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1119,7 +1122,7 @@ nav {
       width: 100%;
       height: auto;
       border: 10px solid var(--clr-neutral-100);
-      min-height: 510px;
+      min-height: 535px;
     }
 
     .plant-image-container {
@@ -1136,7 +1139,7 @@ nav {
 
 
 /* Large Screen Plantlist */
-@media (min-width: 825px) {
+@media (min-width: 1031px) {
   .main-container {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -1172,7 +1175,7 @@ nav {
   width: 100%;
   min-height: 200px;
   background-color: var(--clr-primary-light-1);
-  margin-bottom: 2rem;
+  margin-bottom: 2.7rem;
 }
 
 .cultivations-container {
@@ -1248,7 +1251,6 @@ nav {
     margin-top: 3rem;
 
     .planting-container {
-
       text-align: right;
 
       img {
@@ -1266,23 +1268,23 @@ nav {
     .box-container {
       align-items: center;
       width: 100%;
-      margin: 0 .9rem;
+      padding: 1rem;
+      margin: .9rem;
 
-      h2,
-      p {
+      h2, p {
         text-align: center;
-        padding: 0;
+        padding-bottom: .6rem;
       }
     }
   }
 
   .btn-container {
-    margin-top: 1rem;
+    margin-top: .3rem;
   }
 }
 
 /* Tablets Previous-cultivations */
-@media (min-width: 577px) and (max-width: 824px) {
+@media (min-width: 577px) and (max-width: 1030px) {
   .main-cultivations {
     flex-direction: column;
     justify-content: center;
@@ -1308,14 +1310,10 @@ nav {
 
 .footer-main {
   background-color: var(--clr-green-400);
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  gap: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
 
   .footer-left {
-    max-width: 400px;
+    /* max-width: 400px; */
     display: grid;
     gap: 1rem;
     padding: .8rem;
@@ -1325,17 +1323,20 @@ nav {
     display: flex;
     align-items: center;
     gap: .2rem;
-    margin-top: 3.5rem;
+    margin-top: 1.8rem;
   }
 
-  span,
-  p {
+  span, p {
     color: var(--clr-neutral-100);
   }
 
-  .icon-telephone, .icon-email {
+  .icon-telephone,
+  .icon-email {
     display: flex;
-    gap: .4rem;
+    gap: .5rem;
+    margin-bottom: .5rem;
+    font-size: var(--fs-400);
+    font-weight: var(--fw-bold);
 
     img {
       display: inline-block;
@@ -1344,10 +1345,12 @@ nav {
       object-fit: contain;
       margin-top: 0.3rem;
     }
-    a{
-      color: var(--clr-neutral-100);
-      text-transform: lowercase;
 
+    a {
+      color: var(--clr-neutral-100);
+      font-size: var(--fs-400);
+      font-weight: var(--fw-regular);
+      text-transform: lowercase;
     }
   }
 }
@@ -1355,7 +1358,6 @@ nav {
 /* Footer navigation */
 .footer-nav {
   background-color: var(--clr-green-400);
-  margin-top: 3.5rem;
 
   ul {
     padding: 0;
@@ -1364,7 +1366,7 @@ nav {
     gap: .9rem;
   }
 
-  ul>li {
+  ul > li {
     list-style: none;
 
     a {
@@ -1387,7 +1389,7 @@ nav {
 }
 
 /* Tablet Footer */
-@media (min-width: 577px) and (max-width: 824px) {
+@media (min-width: 577px) and (max-width: 1030px) {
   .footer-main {
     flex-direction: column;
     align-items: start;
@@ -1403,8 +1405,29 @@ nav {
 }
 
 /* Large Screen Footer */
-/* @media (min-width: 825px) {
-    .footer-nav {
-        display: none;
-      }
-  } */
+@media (min-width: 1031px) {
+
+  .footer-main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .footer-left {
+    flex: 2;
+    justify-content: flex-start;
+    padding: 0 0 2rem 2rem;
+    max-width: 600px;
+  }
+
+  .footer-nav {
+    padding: 0 0 2rem 2rem;
+    flex: 2;
+    justify-content: center; 
+    max-width: 300px;
+  }
+
+}
