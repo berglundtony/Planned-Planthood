@@ -375,7 +375,7 @@ nav {
   }
 
   p {
-    font-size: var(--fs-400);
+    font-size: var(--fs-500);
     text-align: center;
   }
 }
@@ -775,11 +775,11 @@ nav {
   gap: 1.2rem;
   padding: 1.5rem 2rem;
 
-  .plant-info>p {
+  .plant-info > p {
     height: auto;
     display: flex;
     align-items: start;
-    font-size: var(--fs-400) ;
+    font-size: var(--fs-500) ;
   }
 
   .plant-info {
@@ -1216,7 +1216,7 @@ nav {
 
   p {
     text-align: start;
-    font-size: var(--fs-400);
+    font-size: var(--fs-500);
   }
 
   .btn-container {
@@ -1330,7 +1330,7 @@ nav {
 
   span, p {
     color: var(--clr-neutral-100);
-    font-size: var(--fs-400);
+    font-size: var(--fs-500);
   }
 
   .icon-telephone,
