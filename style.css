@@ -779,6 +779,7 @@ nav {
     height: auto;
     display: flex;
     align-items: start;
+    font-size: var(--fs-400) ;
   }
 
   .plant-info {
@@ -1215,6 +1216,7 @@ nav {
 
   p {
     text-align: start;
+    font-size: var(--fs-400);
   }
 
   .btn-container {
@@ -1328,6 +1330,7 @@ nav {
 
   span, p {
     color: var(--clr-neutral-100);
+    font-size: var(--fs-400);
   }
 
   .icon-telephone,
